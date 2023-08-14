@@ -30,5 +30,6 @@ namespace JSH
     private:
         eState mState;
         static float mTime;
+        bool mPressed;
     };
 }
