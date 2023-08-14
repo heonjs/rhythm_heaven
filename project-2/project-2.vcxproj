@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{72ed8c34-fcd6-4b56-bf88-7fc03430192e}</ProjectGuid>
+    <RootNamespace>project2</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>rhythm_heaven</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Animation.h" />
+    <ClInclude Include="Animationmng.h" />
+    <ClInclude Include="BackGround.h" />
+    <ClInclude Include="BBCaptain.h" />
+    <ClInclude Include="BBIcon.h" />
+    <ClInclude Include="BBNPC.h" />
+    <ClInclude Include="BBPlayer.h" />
+    <ClInclude Include="BlueBirds.h" />
+    <ClInclude Include="BlueBirdsEnd.h" />
+    <ClInclude Include="BlueBirdsTitle.h" />
+    <ClInclude Include="Cafe.h" />
+    <ClInclude Include="Collider.h" />
+    <ClInclude Include="Collidermng.h" />
+    <ClInclude Include="Component.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GleeClub.h" />
+    <ClInclude Include="GleeClubEnd.h" />
+    <ClInclude Include="GleeClubIcon.h" />
+    <ClInclude Include="GleeClubTitle.h" />
+    <ClInclude Include="GleeNPC1.h" />
+    <ClInclude Include="GleeNPC2.h" />
+    <ClInclude Include="GleePlayer.h" />
+    <ClInclude Include="Icon.h" />
+    <ClInclude Include="Moai.h" />
+    <ClInclude Include="MoaiEnd.h" />
+    <ClInclude Include="MoaiIcon.h" />
+    <ClInclude Include="MoaiNPC.h" />
+    <ClInclude Include="MoaiPlayer.h" />
+    <ClInclude Include="MoaiTitle.h" />
+    <ClInclude Include="MouseCursor.h" />
+    <ClInclude Include="SelectScene.h" />
+    <ClInclude Include="Sound.h" />
+    <ClInclude Include="Soundmng.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="Include.h" />
+    <ClInclude Include="framework.h" />
+    <ClInclude Include="JSHgame.h" />
+    <ClInclude Include="JSHinput.h" />
+    <ClInclude Include="JSHResource.h" />
+    <ClInclude Include="JSHResourcemng.h" />
+    <ClInclude Include="Layer.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="project-2.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="SpriteRenderer.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="JSHmath.h" />
+    <ClInclude Include="Time.h" />
+    <ClInclude Include="TitleScene.h" />
+    <ClInclude Include="Transform.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Animationmng.cpp" />
+    <ClCompile Include="BackGround.cpp" />
+    <ClCompile Include="BBCaptain.cpp" />
+    <ClCompile Include="BBIcon.cpp" />
+    <ClCompile Include="BBNPC.cpp" />
+    <ClCompile Include="BBPlayer.cpp" />
+    <ClCompile Include="BlueBirds.cpp" />
+    <ClCompile Include="BlueBirdsEnd.cpp" />
+    <ClCompile Include="BlueBirdsTitle.cpp" />
+    <ClCompile Include="Cafe.cpp" />
+    <ClCompile Include="Collider.cpp" />
+    <ClCompile Include="Collidermng.cpp" />
+    <ClCompile Include="Component.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GleeClub.cpp" />
+    <ClCompile Include="GleeClubEnd.cpp" />
+    <ClCompile Include="GleeClubIcon.cpp" />
+    <ClCompile Include="GleeClubTitle.cpp" />
+    <ClCompile Include="GleeNPC1.cpp" />
+    <ClCompile Include="GleeNPC2.cpp" />
+    <ClCompile Include="GleePlayer.cpp" />
+    <ClCompile Include="Icon.cpp" />
+    <ClCompile Include="Moai.cpp" />
+    <ClCompile Include="MoaiEnd.cpp" />
+    <ClCompile Include="MoaiIcon.cpp" />
+    <ClCompile Include="MoaiNPC.cpp" />
+    <ClCompile Include="MoaiPlayer.cpp" />
+    <ClCompile Include="MoaiTitle.cpp" />
+    <ClCompile Include="MouseCursor.cpp" />
+    <ClCompile Include="SelectScene.cpp" />
+    <ClCompile Include="Sound.cpp" />
+    <ClCompile Include="Soundmng.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="JSHgame.cpp" />
+    <ClCompile Include="JSHmath.cpp" />
+    <ClCompile Include="JSHResource.cpp" />
+    <ClCompile Include="JSHResourcemng.cpp" />
+    <ClCompile Include="Layer.cpp" />
+    <ClCompile Include="rhythm_heaven.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="JSHinput.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="SpriteRenderer.cpp" />
+    <ClCompile Include="Time.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="TitleScene.cpp" />
+    <ClCompile Include="Transform.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="project-2.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="project-2.ico" />
+    <Image Include="small.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,454 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{8494046e-328b-4a64-809c-834df17904af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Common">
+      <UniqueIdentifier>{33e3a755-2474-403a-9f54-e824e5add117}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\High_Level_Interface">
+      <UniqueIdentifier>{87b0a329-7d01-4ddc-89e9-36ce0ccd718a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\input">
+      <UniqueIdentifier>{bf21b646-452c-449d-a586-7daef1fe9617}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows">
+      <UniqueIdentifier>{794b2a49-6d69-4899-9e52-8abd2a4ace26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows\리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Engine\Scene">
+      <UniqueIdentifier>{9c98c40d-a8f5-45e4-8517-35e8b359c1f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Layer">
+      <UniqueIdentifier>{37970aac-6e34-4d9c-b9c1-e2384ea55434}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Entity">
+      <UniqueIdentifier>{46f71aeb-f284-4b4f-9644-dd62b071eefb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\GameObject">
+      <UniqueIdentifier>{1576d483-8df1-4763-ac15-237239aa0e9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Component">
+      <UniqueIdentifier>{f191ca77-b82f-42aa-8bff-5ae83071d074}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Component\SpriteRenderer">
+      <UniqueIdentifier>{1b7f1de4-f8d8-404e-9bb0-320f76eb7e24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Component\Transform">
+      <UniqueIdentifier>{fee160d0-dd39-4dca-aee9-cabd76bd794c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents">
+      <UniqueIdentifier>{fdddb3c7-f2bc-40e9-837d-d448b0e0ce12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\TitleScene">
+      <UniqueIdentifier>{d6164d7f-04c8-44ac-a13b-71ad446e004b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\GameObject">
+      <UniqueIdentifier>{343f3786-591f-4727-9f71-ee8706d6c4b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Object">
+      <UniqueIdentifier>{c3b62b75-ad10-4d8f-922e-6d8f845eeee4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\JSHResource">
+      <UniqueIdentifier>{17087b07-ac3a-4bb0-b40c-c220a46037fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\JSHResource\Texture">
+      <UniqueIdentifier>{d1a35c74-1240-4346-b561-68333b7b19fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\GameObject\BackGround">
+      <UniqueIdentifier>{7e28bbc8-a1d3-4035-8155-5a4c57fc95fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\SelectScene">
+      <UniqueIdentifier>{5db8e5e7-5d30-4684-a1bd-9317ca639a7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\JSHResource\Animationmng">
+      <UniqueIdentifier>{7e127728-3b78-4288-bfe1-1315ac8982fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\GleeClub">
+      <UniqueIdentifier>{b20540ff-ef66-4b22-925d-fbd7d7c41725}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Component\Animation">
+      <UniqueIdentifier>{e8df1b87-0301-4b61-8786-bd8008c5cdde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\GleeClub\GleePlayer">
+      <UniqueIdentifier>{fbd9512c-80dc-46cf-99be-55b28b4e6e8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\GleeClub\GleeNPC">
+      <UniqueIdentifier>{108939cc-ffba-49cc-8e0c-1a6615f67fe2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\BlueBirds">
+      <UniqueIdentifier>{0884b586-69a4-46ee-92b2-df9faff0f5a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\Moai">
+      <UniqueIdentifier>{09ea8711-7e18-409e-9e3d-a0e352f91bc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\Moai\MoaiPlayer">
+      <UniqueIdentifier>{7e1fb651-8ae3-4434-9e18-59bb39baea97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\Moai\MoaiNPC">
+      <UniqueIdentifier>{6e5322e6-c5a0-48bb-b396-4e548b1d6cfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\SelectScene\Icon">
+      <UniqueIdentifier>{a6840696-911e-4135-8fe6-d46e3d6776b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows\헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Engine\Time">
+      <UniqueIdentifier>{504a15a9-74a6-4d82-8708-0ab1dfb9997d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\BlueBirds\BBPlayer">
+      <UniqueIdentifier>{fd37a7e0-adf3-4226-876a-34dd3d2c5afb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\BlueBirds\BBNPC">
+      <UniqueIdentifier>{b860134e-4230-44ac-8ff9-da5d153df65d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\JSHResource\Sound">
+      <UniqueIdentifier>{b8f84600-1c57-46c0-9d9e-a43bdb946ef3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Component\Collider">
+      <UniqueIdentifier>{3509cf1a-733e-46fb-916b-e53e68e028d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\BlueBirds\BBCaptain">
+      <UniqueIdentifier>{886ee107-1de7-41b4-ac08-799f36caa7c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\BlueBirds\BBIcon">
+      <UniqueIdentifier>{36b2a616-d540-4c11-836a-8e539161759e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\Moai\MoaiIcon">
+      <UniqueIdentifier>{eabdde00-b0b3-494d-92e8-df074cac2860}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\GleeClub\GleeClubIcon">
+      <UniqueIdentifier>{7160edf4-1d1f-43e1-9c76-4fc4ce38049e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Windows\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Windows\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Windows\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="project-2.h">
+      <Filter>Windows\헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Include.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="JSHmath.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="JSHgame.h">
+      <Filter>Engine\High_Level_Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="JSHinput.h">
+      <Filter>Engine\input</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Engine\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Engine\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Layer.h">
+      <Filter>Engine\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Engine\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>Engine\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>Engine\Component\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteRenderer.h">
+      <Filter>Engine\Component\SpriteRenderer</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleScene.h">
+      <Filter>Contents\TitleScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Engine\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Engine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="JSHResource.h">
+      <Filter>Engine\JSHResource</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Engine\JSHResource\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="JSHResourcemng.h">
+      <Filter>Engine\JSHResource</Filter>
+    </ClInclude>
+    <ClInclude Include="BackGround.h">
+      <Filter>Contents\GameObject\BackGround</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectScene.h">
+      <Filter>Contents\SelectScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>Engine\Component\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Animationmng.h">
+      <Filter>Engine\JSHResource\Animationmng</Filter>
+    </ClInclude>
+    <ClInclude Include="GleeClub.h">
+      <Filter>Contents\GleeClub</Filter>
+    </ClInclude>
+    <ClInclude Include="GleeClubTitle.h">
+      <Filter>Contents\GleeClub</Filter>
+    </ClInclude>
+    <ClInclude Include="GleePlayer.h">
+      <Filter>Contents\GleeClub\GleePlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="GleeNPC2.h">
+      <Filter>Contents\GleeClub\GleeNPC</Filter>
+    </ClInclude>
+    <ClInclude Include="GleeNPC1.h">
+      <Filter>Contents\GleeClub\GleeNPC</Filter>
+    </ClInclude>
+    <ClInclude Include="BlueBirds.h">
+      <Filter>Contents\BlueBirds</Filter>
+    </ClInclude>
+    <ClInclude Include="BlueBirdsTitle.h">
+      <Filter>Contents\BlueBirds</Filter>
+    </ClInclude>
+    <ClInclude Include="Moai.h">
+      <Filter>Contents\Moai</Filter>
+    </ClInclude>
+    <ClInclude Include="MoaiTitle.h">
+      <Filter>Contents\Moai</Filter>
+    </ClInclude>
+    <ClInclude Include="MoaiPlayer.h">
+      <Filter>Contents\Moai\MoaiPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="MoaiNPC.h">
+      <Filter>Contents\Moai\MoaiNPC</Filter>
+    </ClInclude>
+    <ClInclude Include="MoaiEnd.h">
+      <Filter>Contents\Moai</Filter>
+    </ClInclude>
+    <ClInclude Include="GleeClubEnd.h">
+      <Filter>Contents\GleeClub</Filter>
+    </ClInclude>
+    <ClInclude Include="Soundmng.h">
+      <Filter>Engine\JSHResource\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.h">
+      <Filter>Engine\JSHResource\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Icon.h">
+      <Filter>Contents\SelectScene\Icon</Filter>
+    </ClInclude>
+    <ClInclude Include="BlueBirdsEnd.h">
+      <Filter>Contents\BlueBirds</Filter>
+    </ClInclude>
+    <ClInclude Include="Cafe.h">
+      <Filter>Contents\SelectScene</Filter>
+    </ClInclude>
+    <ClInclude Include="BBNPC.h">
+      <Filter>Contents\BlueBirds\BBNPC</Filter>
+    </ClInclude>
+    <ClInclude Include="BBPlayer.h">
+      <Filter>Contents\BlueBirds\BBPlayer</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>Engine\Component\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="Collidermng.h">
+      <Filter>Engine\Component\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseCursor.h">
+      <Filter>Engine\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="BBCaptain.h">
+      <Filter>Contents\BlueBirds\BBCaptain</Filter>
+    </ClInclude>
+    <ClInclude Include="MoaiIcon.h">
+      <Filter>Contents\Moai\MoaiIcon</Filter>
+    </ClInclude>
+    <ClInclude Include="BBIcon.h">
+      <Filter>Contents\BlueBirds\BBIcon</Filter>
+    </ClInclude>
+    <ClInclude Include="GleeClubIcon.h">
+      <Filter>Contents\GleeClub\GleeClubIcon</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="rhythm_heaven.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="JSHgame.cpp">
+      <Filter>Engine\High_Level_Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="JSHinput.cpp">
+      <Filter>Engine\input</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Engine\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Engine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Engine\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Layer.cpp">
+      <Filter>Engine\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.cpp">
+      <Filter>Engine\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Engine\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteRenderer.cpp">
+      <Filter>Engine\Component\SpriteRenderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>Engine\Component\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>Contents\TitleScene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Engine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="JSHResource.cpp">
+      <Filter>Engine\JSHResource</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Engine\JSHResource\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="JSHResourcemng.cpp">
+      <Filter>Engine\JSHResource</Filter>
+    </ClCompile>
+    <ClCompile Include="JSHmath.cpp">
+      <Filter>Engine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="BackGround.cpp">
+      <Filter>Contents\GameObject\BackGround</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectScene.cpp">
+      <Filter>Contents\SelectScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Engine\Component\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Animationmng.cpp">
+      <Filter>Engine\JSHResource\Animationmng</Filter>
+    </ClCompile>
+    <ClCompile Include="GleeClub.cpp">
+      <Filter>Contents\GleeClub</Filter>
+    </ClCompile>
+    <ClCompile Include="GleeClubTitle.cpp">
+      <Filter>Contents\GleeClub</Filter>
+    </ClCompile>
+    <ClCompile Include="GleePlayer.cpp">
+      <Filter>Contents\GleeClub\GleePlayer</Filter>
+    </ClCompile>
+    <ClCompile Include="GleeNPC2.cpp">
+      <Filter>Contents\GleeClub\GleeNPC</Filter>
+    </ClCompile>
+    <ClCompile Include="GleeNPC1.cpp">
+      <Filter>Contents\GleeClub\GleeNPC</Filter>
+    </ClCompile>
+    <ClCompile Include="BlueBirds.cpp">
+      <Filter>Contents\BlueBirds</Filter>
+    </ClCompile>
+    <ClCompile Include="BlueBirdsTitle.cpp">
+      <Filter>Contents\BlueBirds</Filter>
+    </ClCompile>
+    <ClCompile Include="Moai.cpp">
+      <Filter>Contents\Moai</Filter>
+    </ClCompile>
+    <ClCompile Include="MoaiTitle.cpp">
+      <Filter>Contents\Moai</Filter>
+    </ClCompile>
+    <ClCompile Include="MoaiPlayer.cpp">
+      <Filter>Contents\Moai\MoaiPlayer</Filter>
+    </ClCompile>
+    <ClCompile Include="MoaiNPC.cpp">
+      <Filter>Contents\Moai\MoaiNPC</Filter>
+    </ClCompile>
+    <ClCompile Include="MoaiEnd.cpp">
+      <Filter>Contents\Moai</Filter>
+    </ClCompile>
+    <ClCompile Include="GleeClubEnd.cpp">
+      <Filter>Contents\GleeClub</Filter>
+    </ClCompile>
+    <ClCompile Include="Soundmng.cpp">
+      <Filter>Engine\JSHResource\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound.cpp">
+      <Filter>Engine\JSHResource\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Icon.cpp">
+      <Filter>Contents\SelectScene\Icon</Filter>
+    </ClCompile>
+    <ClCompile Include="BlueBirdsEnd.cpp">
+      <Filter>Contents\BlueBirds</Filter>
+    </ClCompile>
+    <ClCompile Include="Cafe.cpp">
+      <Filter>Contents\SelectScene</Filter>
+    </ClCompile>
+    <ClCompile Include="BBNPC.cpp">
+      <Filter>Contents\BlueBirds\BBNPC</Filter>
+    </ClCompile>
+    <ClCompile Include="BBPlayer.cpp">
+      <Filter>Contents\BlueBirds\BBPlayer</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider.cpp">
+      <Filter>Engine\Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="Collidermng.cpp">
+      <Filter>Engine\Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="MouseCursor.cpp">
+      <Filter>Engine\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="BBCaptain.cpp">
+      <Filter>Contents\BlueBirds\BBCaptain</Filter>
+    </ClCompile>
+    <ClCompile Include="MoaiIcon.cpp">
+      <Filter>Contents\Moai\MoaiIcon</Filter>
+    </ClCompile>
+    <ClCompile Include="BBIcon.cpp">
+      <Filter>Contents\BlueBirds\BBIcon</Filter>
+    </ClCompile>
+    <ClCompile Include="GleeClubIcon.cpp">
+      <Filter>Contents\GleeClub\GleeClubIcon</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="project-2.rc">
+      <Filter>Windows\리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>Windows\리소스 파일</Filter>
+    </Image>
+    <Image Include="project-2.ico">
+      <Filter>Windows\리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
