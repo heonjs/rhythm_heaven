@@ -8,10 +8,12 @@
 #include "Transform.h"
 #include "Time.h"
 #include "Sound.h"
-#include "Icon.h"
 #include "Collider.h"
 #include "Collidermng.h"
 #include "MouseCursor.h"
+#include "MoaiIcon.h"
+#include "GleeClubIcon.h"
+#include "BBIcon.h"
 
 namespace JSH
 {
@@ -68,13 +70,18 @@ namespace JSH
         ge1sr->SetScale(vector2(2.0f, 2.0f));
         ge1sr->SetBmpRGB(255, 0, 255);
 
-        //Game Select Icon
-        Icon* icon = object::Instantiate<Icon>(eLayerType::UI);
-        Transform* icontr = icon->GetComponent<Transform>();
+        //Moai Icon
+        MoaiIcon* moaiicon = object::Instantiate<MoaiIcon>(eLayerType::Icon);
+
+        //GleeClub Icon
+        GleeClubIcon* gleeclubicon = object::Instantiate<GleeClubIcon>(eLayerType::Icon);
+
+        //BlueBirds Icon
+        BBIcon* bbicon = object::Instantiate<BBIcon>(eLayerType::Icon);
 
         //Mouse Cursor
         MouseCursor* mouse = object::Instantiate<MouseCursor>(eLayerType::Cursor);
-        Collidermng::ColliderLayerCheck(eLayerType::UI, eLayerType::Cursor, true);
+        Collidermng::ColliderLayerCheck(eLayerType::Icon, eLayerType::Cursor, true);
 
         //Select BGM
         JSHResourcemng::Load<Sound>(L"SelectSound", L"..\\Resource\\Sound\\Game_Select.wav");      

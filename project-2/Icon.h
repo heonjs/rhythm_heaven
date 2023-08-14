@@ -3,31 +3,17 @@
 
 namespace JSH
 {
-    enum class eIcontype
-    {
-        Moai,
-        GleeClub,
-        BlueBirds,
-        Cafe,
-        End
-    };
-
     class Icon : public GameObject
     {
     public:
         Icon();
         virtual ~Icon();
 
-        virtual void Initialize();
-        virtual void Update();
-        virtual void Render(HDC hdc);
-
-        virtual void OncollisionEnter();
-        virtual void OncollisionExit();
+        virtual void Initialize() override;
+        virtual void Update() override;
+        virtual void Render(HDC hdc) override;
 
     private:
-        eIcontype   mType;
-        class Animationmng* mAnimationmng;
 
     };
 }

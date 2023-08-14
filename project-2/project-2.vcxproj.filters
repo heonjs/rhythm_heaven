@@ -96,9 +96,6 @@
     <Filter Include="Contents\Moai\MoaiNPC">
       <UniqueIdentifier>{6e5322e6-c5a0-48bb-b396-4e548b1d6cfc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Contents\SelectScene\Icon">
-      <UniqueIdentifier>{a6840696-911e-4135-8fe6-d46e3d6776b5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Windows\헤더 파일">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
@@ -129,6 +126,9 @@
     </Filter>
     <Filter Include="Contents\GleeClub\GleeClubIcon">
       <UniqueIdentifier>{7160edf4-1d1f-43e1-9c76-4fc4ce38049e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\GameObject\Icon">
+      <UniqueIdentifier>{a6840696-911e-4135-8fe6-d46e3d6776b5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -256,7 +256,7 @@
       <Filter>Engine\JSHResource\Sound</Filter>
     </ClInclude>
     <ClInclude Include="Icon.h">
-      <Filter>Contents\SelectScene\Icon</Filter>
+      <Filter>Contents\GameObject\Icon</Filter>
     </ClInclude>
     <ClInclude Include="BlueBirdsEnd.h">
       <Filter>Contents\BlueBirds</Filter>
@@ -402,7 +402,7 @@
       <Filter>Engine\JSHResource\Sound</Filter>
     </ClCompile>
     <ClCompile Include="Icon.cpp">
-      <Filter>Contents\SelectScene\Icon</Filter>
+      <Filter>Contents\GameObject\Icon</Filter>
     </ClCompile>
     <ClCompile Include="BlueBirdsEnd.cpp">
       <Filter>Contents\BlueBirds</Filter>

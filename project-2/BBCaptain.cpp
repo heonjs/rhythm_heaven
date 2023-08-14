@@ -29,13 +29,6 @@ namespace JSH
         animationmng->CreateAnimation(L"Captain_Idle", Captain_Idle, vector2(0.0f, 0.0f), vector2(62.0f, 78.0f), 3, vector2::Zero, 0.15f);
         animationmng->SetBmpRGB(L"Captain_Idle", 227, 178, 255);
 
-        //Captain Talk
-        Texture* Captain_Talk = JSHResourcemng::Load<Texture>(L"Captain_Talk"
-            , L"..\\Resource\\Ingame\\Blue_Bird\\Cpt_Talk.bmp");
-        JSHResourcemng::Load<Sound>(L"Peck_a_Beak", L"..\\Resource\\sound\\Blue_Birds\\SE_BIRD_TUTUITE.wav");
-        animationmng->CreateAnimation(L"Captain_Talk", Captain_Talk, vector2(0.0f, 0.0f), vector2(62.0f, 78.0f), 2, vector2::Zero, 0.15f);
-        animationmng->SetBmpRGB(L"Captain_Talk", 227, 178, 255);
-
         animationmng->PlayAnimation(L"Captain_Idle", true);
     }
     void BBCaptain::Update()

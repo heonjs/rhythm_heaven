@@ -37,6 +37,7 @@ namespace JSH::enums
         FrontObject,        
         Effect,
         UI,
+        Icon,
         Cursor,
         End //End는 string의 '\0' 처럼 꼭 붙여준다.
     };
