@@ -16,7 +16,7 @@ namespace JSH
         virtual void Enter();
         virtual void Exit();
 
-        float GetScore()
+        static float GetScore()
         {
             return mScore;
         }

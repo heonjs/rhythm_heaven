@@ -22,6 +22,17 @@ namespace JSH
     {
         GameObject::Initialize();
 
+        Animationmng* animationmng = AddComponent<Animationmng>();
+        animationmng->SetScale(vector2(2.0f, 2.0f));
+
+        //OK Button
+        Texture* OK_Button = JSHResourcemng::Load<Texture>(L"OK_Button", L"..\\Resource\\GameSelect\\OK_Button.bmp");
+        animationmng->CreateAnimation(L"OKButton", OK_Button, vector2::Zero, vector2(32.0f, 26.0f), 1);
+
+        //OK Button Pressed
+        Texture* Press_OK = JSHResourcemng::Load<Texture>(L"Press", L"..\\Resource\\GameSelect\\Press_OK.bmp");
+        animationmng->CreateAnimation(L"Press_Button", Press_OK, vector2::Zero, vector2(32.0f, 26.0f), 2);
+
         //Icon
         Texture* bbicon = JSHResourcemng::Load<Texture>(L"BlueBirdsIcon"
             , L"..\\Resource\\GameSelect\\Blue_Birds_Icon.bmp");
@@ -44,14 +55,13 @@ namespace JSH
         i3fsr->SetTexture(iconframe);
         i3fsr->SetScale(vector2(2.0f, 2.0f));
         i3fsr->SetBmpRGB(255, 0, 255);
-
-        //OK Button
-        Texture* OK_Button = JSHResourcemng::Load<Texture>(L"OK_Button"
-            , L"..\\Resource\\GameSelect\\\OK_Button.bmp");
     }
     void BBIcon::Update()
     {
         GameObject::Update();
+
+        Animationmng* animationmng = GetComponent<Animationmng>();
+        Collider* col = GetComponent<Collider>();
     }
     void BBIcon::Render(HDC hdc)
     {

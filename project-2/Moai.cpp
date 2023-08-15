@@ -17,6 +17,7 @@
 namespace JSH
 {
     float Moai::mPlayTime = 0.0f;
+    float Moai::mScore = 0.0f;
 
     Moai::Moai()
         : SoundPlay(false)
@@ -125,7 +126,6 @@ namespace JSH
         static float mTime = 0.0f;
         mPlayTime += Time::DeltaTime();
 
-
         if (mPlayTime >= 84.0f)
         {
             // 노래가 끝나면 End Scene으로 이동
@@ -155,6 +155,7 @@ namespace JSH
         {
             SceneManager::LoadScene(L"MoaiTitle");
         }
+
         //MoaiEnd 로 이동
         if (input::GetKeyDown(eKeyCode::E))
         {

@@ -9,6 +9,7 @@
 #include "Time.h"
 #include "Sound.h"
 #include "BlueBirds.h"
+#include "BBEndImage.h"
 
 namespace JSH
 {
@@ -49,40 +50,19 @@ namespace JSH
         btsr->SetTexture(texture2);
         btsr->SetScale(vector2(2.0f, 2.25f));
 
-        //BlueBirds Ending Perfect
-        Texture* BB_Perfect = JSHResourcemng::Load<Texture>(L"BB_Perfect"
-            , L"..\\Resource\\Ingame\\Blue_Bird\\BBEnd_Perfect.bmp");
-        BackGround* bbP = object::Instantiate<BackGround>(eLayerType::Effect);
-        SpriteRenderer* bbPsr = bbP->AddComponent<SpriteRenderer>();
-        Transform* bbPtr = bbP->GetComponent<Transform>();
-        bbPsr->SetTexture(BB_Perfect);
-        bbPsr->SetScale(vector2(2.0f, 2.0f));
-        bbPtr->SetPosition(vector2(192.0f, 288.0f));
-
-        //BlueBirds Ending OK
-        Texture* BB_OK = JSHResourcemng::Load<Texture>(L"BB_OK"
-            , L"..\\Resource\\Ingame\\Blue_Bird\\BBEnd_OK.bmp");
-        BackGround* bbO = object::Instantiate<BackGround>(eLayerType::Effect);
-        SpriteRenderer* bbOsr = bbO->AddComponent<SpriteRenderer>();
-        Transform* bbOtr = bbO->GetComponent<Transform>();
-        bbOsr->SetTexture(BB_OK);
-        bbOsr->SetScale(vector2(2.0f, 2.0f));
-        bbOtr->SetPosition(vector2(192.0f, 288.0f));
-
-        //BlueBirds Ending Bad
-        Texture* BB_Bad = JSHResourcemng::Load<Texture>(L"BB_Bad"
-            , L"..\\Resource\\Ingame\\Blue_Bird\\BBEnd_Bad.bmp");
-        BackGround* bbB = object::Instantiate<BackGround>(eLayerType::Effect);
-        SpriteRenderer* bbBsr = bbB->AddComponent<SpriteRenderer>();
-        Transform* bbBtr = bbB->GetComponent<Transform>();
-        bbBsr->SetTexture(BB_Bad);
-        bbBsr->SetScale(vector2(2.0f, 2.0f));
-        bbBtr->SetPosition(vector2(192.0f, 288.0f));
-
+        //BB Ending Image
+        BBEndImage* BBend = object::Instantiate<BBEndImage>(eLayerType::BackGroundObject);
+        Transform* BBendtr = BBend->GetComponent<Transform>();
+        BBendtr->SetPosition(vector2(192.0f, 288.0f));
     }
     void BlueBirdsEnd::Update()
     {
         Scene::Update();
+
+        if (input::GetKeyDown(eKeyCode::Lbutton))
+        {
+            SceneManager::LoadScene(L"SelectScene");
+        }
     }
     void BlueBirdsEnd::Render(HDC hdc)
     {
@@ -90,8 +70,32 @@ namespace JSH
     }
     void BlueBirdsEnd::Enter()
     {
+        Sound* sound1 = JSHResourcemng::Find<Sound>(L"BB_Perfect_BGM");
+        Sound* sound2 = JSHResourcemng::Find<Sound>(L"BB_OK_BGM");
+        Sound* sound3 = JSHResourcemng::Find<Sound>(L"BB_Bad_BGM");
+
+        if (BlueBirds::GetScore() >= 100.0f)
+        {
+            sound1->Play(false);
+
+        }
+        else if (BlueBirds::GetScore() < 100.0f and BlueBirds::GetScore() >= 30.0f)
+        {
+            sound2->Play(false);
+        }
+        else if (BlueBirds::GetScore() < 30.0f)
+        {
+            sound3->Play(false);
+        }
     }
     void BlueBirdsEnd::Exit()
     {
+        Sound* sound1 = JSHResourcemng::Find<Sound>(L"BB_Perfect_BGM");
+        Sound* sound2 = JSHResourcemng::Find<Sound>(L"BB_OK_BGM");
+        Sound* sound3 = JSHResourcemng::Find<Sound>(L"BB_Bad_BGM");
+
+        sound1->Stop(true);
+        sound2->Stop(true);
+        sound3->Stop(true);
     }
 }

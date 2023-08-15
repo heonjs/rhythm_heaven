@@ -118,20 +118,35 @@
     <Filter Include="Contents\BlueBirds\BBCaptain">
       <UniqueIdentifier>{886ee107-1de7-41b4-ac08-799f36caa7c9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Contents\BlueBirds\BBIcon">
-      <UniqueIdentifier>{36b2a616-d540-4c11-836a-8e539161759e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Contents\Moai\MoaiIcon">
-      <UniqueIdentifier>{eabdde00-b0b3-494d-92e8-df074cac2860}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Contents\GleeClub\GleeClubIcon">
-      <UniqueIdentifier>{7160edf4-1d1f-43e1-9c76-4fc4ce38049e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Contents\GameObject\Icon">
       <UniqueIdentifier>{a6840696-911e-4135-8fe6-d46e3d6776b5}</UniqueIdentifier>
     </Filter>
     <Filter Include="Contents\GleeClub\GleeEndImage">
       <UniqueIdentifier>{4276351a-88ea-4a8e-8583-d45012e8771b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\Moai\MoaiEndImage">
+      <UniqueIdentifier>{1ba41fe6-0fca-41f1-9b66-cf06d679372d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\SelectScene\GleeClubExplain">
+      <UniqueIdentifier>{8d0115e0-b76b-474a-a7c2-fd3cefc86e70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\SelectScene\MoaiExplain">
+      <UniqueIdentifier>{e2021d8f-08f9-448b-a55a-557cbe6aa4ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\SelectScene\BlueBirdsExplain">
+      <UniqueIdentifier>{3d631233-f88f-4e2b-ac30-99d1ce8dac1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\SelectScene\MoaiIcon">
+      <UniqueIdentifier>{eabdde00-b0b3-494d-92e8-df074cac2860}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\SelectScene\GleeClubIcon">
+      <UniqueIdentifier>{7160edf4-1d1f-43e1-9c76-4fc4ce38049e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\SelectScene\BBIcon">
+      <UniqueIdentifier>{36b2a616-d540-4c11-836a-8e539161759e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\BlueBirds\BBEndImage">
+      <UniqueIdentifier>{c7c22bcd-7b79-4523-bf9d-0562c1c13e3e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -283,19 +298,34 @@
       <Filter>Contents\BlueBirds\BBCaptain</Filter>
     </ClInclude>
     <ClInclude Include="MoaiIcon.h">
-      <Filter>Contents\Moai\MoaiIcon</Filter>
+      <Filter>Contents\SelectScene\MoaiIcon</Filter>
     </ClInclude>
     <ClInclude Include="BBIcon.h">
-      <Filter>Contents\BlueBirds\BBIcon</Filter>
+      <Filter>Contents\SelectScene\BBIcon</Filter>
     </ClInclude>
     <ClInclude Include="GleeClubIcon.h">
-      <Filter>Contents\GleeClub\GleeClubIcon</Filter>
+      <Filter>Contents\SelectScene\GleeClubIcon</Filter>
     </ClInclude>
     <ClInclude Include="GleeClubEnd.h">
       <Filter>Contents\GleeClub</Filter>
     </ClInclude>
     <ClInclude Include="GleeEndImage.h">
       <Filter>Contents\GleeClub\GleeEndImage</Filter>
+    </ClInclude>
+    <ClInclude Include="MoaiEndImage.h">
+      <Filter>Contents\Moai\MoaiEndImage</Filter>
+    </ClInclude>
+    <ClInclude Include="BlueBirdsExplain.h">
+      <Filter>Contents\SelectScene\BlueBirdsExplain</Filter>
+    </ClInclude>
+    <ClInclude Include="GleeClubExplain.h">
+      <Filter>Contents\SelectScene\GleeClubExplain</Filter>
+    </ClInclude>
+    <ClInclude Include="MoaiExplain.h">
+      <Filter>Contents\SelectScene\MoaiExplain</Filter>
+    </ClInclude>
+    <ClInclude Include="BBEndImage.h">
+      <Filter>Contents\BlueBirds\BBEndImage</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -432,19 +462,34 @@
       <Filter>Contents\BlueBirds\BBCaptain</Filter>
     </ClCompile>
     <ClCompile Include="MoaiIcon.cpp">
-      <Filter>Contents\Moai\MoaiIcon</Filter>
+      <Filter>Contents\SelectScene\MoaiIcon</Filter>
     </ClCompile>
     <ClCompile Include="BBIcon.cpp">
-      <Filter>Contents\BlueBirds\BBIcon</Filter>
+      <Filter>Contents\SelectScene\BBIcon</Filter>
     </ClCompile>
     <ClCompile Include="GleeClubIcon.cpp">
-      <Filter>Contents\GleeClub\GleeClubIcon</Filter>
+      <Filter>Contents\SelectScene\GleeClubIcon</Filter>
     </ClCompile>
     <ClCompile Include="GleeClubEnd.cpp">
       <Filter>Contents\GleeClub</Filter>
     </ClCompile>
     <ClCompile Include="GleeEndImage.cpp">
       <Filter>Contents\GleeClub\GleeEndImage</Filter>
+    </ClCompile>
+    <ClCompile Include="MoaiEndImage.cpp">
+      <Filter>Contents\Moai\MoaiEndImage</Filter>
+    </ClCompile>
+    <ClCompile Include="BlueBirdsExplain.cpp">
+      <Filter>Contents\SelectScene\BlueBirdsExplain</Filter>
+    </ClCompile>
+    <ClCompile Include="GleeClubExplain.cpp">
+      <Filter>Contents\SelectScene\GleeClubExplain</Filter>
+    </ClCompile>
+    <ClCompile Include="MoaiExplain.cpp">
+      <Filter>Contents\SelectScene\MoaiExplain</Filter>
+    </ClCompile>
+    <ClCompile Include="BBEndImage.cpp">
+      <Filter>Contents\BlueBirds\BBEndImage</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

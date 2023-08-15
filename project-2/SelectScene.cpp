@@ -14,6 +14,9 @@
 #include "MoaiIcon.h"
 #include "GleeClubIcon.h"
 #include "BBIcon.h"
+#include "BlueBirdsExplain.h"
+#include "GleeClubExplain.h"
+#include "MoaiExplain.h"
 
 namespace JSH
 {

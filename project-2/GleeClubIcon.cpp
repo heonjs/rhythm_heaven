@@ -7,6 +7,7 @@
 #include "Object.h"
 #include "SpriteRenderer.h"
 #include "BackGround.h"
+#include "Animationmng.h"
 
 namespace JSH
 {
@@ -19,6 +20,17 @@ namespace JSH
     void GleeClubIcon::Initialize()
     {
         GameObject::Initialize();
+
+        Animationmng* animationmng = AddComponent<Animationmng>();
+        animationmng->SetScale(vector2(2.0f, 2.0f));
+
+        //OK Button
+        Texture* OK_Button = JSHResourcemng::Load<Texture>(L"OK_Button", L"..\\Resource\\GameSelect\\OK_Button.bmp");
+        animationmng->CreateAnimation(L"OKButton", OK_Button, vector2::Zero, vector2(32.0f, 26.0f), 1);
+
+        //OK Button Pressed
+        Texture* Press_OK = JSHResourcemng::Load<Texture>(L"Press", L"..\\Resource\\GameSelect\\Press_OK.bmp");
+        animationmng->CreateAnimation(L"Press_Button", Press_OK, vector2::Zero, vector2(32.0f, 26.0f), 2);
 
         //Icon
         Texture* icon2 = JSHResourcemng::Load<Texture>(L"GleeClubIcon"

@@ -134,11 +134,13 @@
     <ClInclude Include="Animationmng.h" />
     <ClInclude Include="BackGround.h" />
     <ClInclude Include="BBCaptain.h" />
+    <ClInclude Include="BBEndImage.h" />
     <ClInclude Include="BBIcon.h" />
     <ClInclude Include="BBNPC.h" />
     <ClInclude Include="BBPlayer.h" />
     <ClInclude Include="BlueBirds.h" />
     <ClInclude Include="BlueBirdsEnd.h" />
+    <ClInclude Include="BlueBirdsExplain.h" />
     <ClInclude Include="BlueBirdsTitle.h" />
     <ClInclude Include="Cafe.h" />
     <ClInclude Include="Collider.h" />
@@ -148,6 +150,7 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GleeClub.h" />
     <ClInclude Include="GleeClubEnd.h" />
+    <ClInclude Include="GleeClubExplain.h" />
     <ClInclude Include="GleeClubIcon.h" />
     <ClInclude Include="GleeClubTitle.h" />
     <ClInclude Include="GleeEndImage.h" />
@@ -157,6 +160,8 @@
     <ClInclude Include="Icon.h" />
     <ClInclude Include="Moai.h" />
     <ClInclude Include="MoaiEnd.h" />
+    <ClInclude Include="MoaiEndImage.h" />
+    <ClInclude Include="MoaiExplain.h" />
     <ClInclude Include="MoaiIcon.h" />
     <ClInclude Include="MoaiNPC.h" />
     <ClInclude Include="MoaiPlayer.h" />
@@ -190,11 +195,13 @@
     <ClCompile Include="Animationmng.cpp" />
     <ClCompile Include="BackGround.cpp" />
     <ClCompile Include="BBCaptain.cpp" />
+    <ClCompile Include="BBEndImage.cpp" />
     <ClCompile Include="BBIcon.cpp" />
     <ClCompile Include="BBNPC.cpp" />
     <ClCompile Include="BBPlayer.cpp" />
     <ClCompile Include="BlueBirds.cpp" />
     <ClCompile Include="BlueBirdsEnd.cpp" />
+    <ClCompile Include="BlueBirdsExplain.cpp" />
     <ClCompile Include="BlueBirdsTitle.cpp" />
     <ClCompile Include="Cafe.cpp" />
     <ClCompile Include="Collider.cpp" />
@@ -203,6 +210,7 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GleeClub.cpp" />
     <ClCompile Include="GleeClubEnd.cpp" />
+    <ClCompile Include="GleeClubExplain.cpp" />
     <ClCompile Include="GleeClubIcon.cpp" />
     <ClCompile Include="GleeClubTitle.cpp" />
     <ClCompile Include="GleeEndImage.cpp" />
@@ -212,6 +220,8 @@
     <ClCompile Include="Icon.cpp" />
     <ClCompile Include="Moai.cpp" />
     <ClCompile Include="MoaiEnd.cpp" />
+    <ClCompile Include="MoaiEndImage.cpp" />
+    <ClCompile Include="MoaiExplain.cpp" />
     <ClCompile Include="MoaiIcon.cpp" />
     <ClCompile Include="MoaiNPC.cpp" />
     <ClCompile Include="MoaiPlayer.cpp" />

@@ -11,6 +11,7 @@
 #include "Animation.h"
 #include "Sound.h"
 #include "Moai.h"
+#include "MoaiEndImage.h"
 
 namespace JSH
 {
@@ -47,20 +48,21 @@ namespace JSH
         edtctr->SetPosition(vector2(576.0f, 288.0f));
         edtcsr->SetTexture(EndingBG);
         edtcsr->SetScale(vector2(2.0f, 2.25f));
+
+        //Moai Ending Image
+        MoaiEndImage* Moaiend = object::Instantiate<MoaiEndImage>(eLayerType::BackGroundObject);
+        Transform* Moaiendtr = Moaiend->GetComponent<Transform>();
+        Moaiendtr->SetPosition(vector2(192.0f, 288.0f));
     }
     void MoaiEnd::Update()
     {
-        //Find BGM
-        Sound* sound1 = JSHResourcemng::Find<Sound>(L"MoaiPerfect_S");
-        Sound* sound2 = JSHResourcemng::Find<Sound>(L"MoaiOK_S");
-        Sound* sound3 = JSHResourcemng::Find<Sound>(L"MoaiBad_S");
+        Scene::Update();
 
         if (input::GetKeyDown(eKeyCode::Lbutton))
         {
             SceneManager::LoadScene(L"SelectScene");
         }
 
-        Scene::Update();
     }
     void MoaiEnd::Render(HDC hdc)
     {
@@ -72,6 +74,19 @@ namespace JSH
         Sound* sound1 = JSHResourcemng::Find<Sound>(L"MoaiPerfect_S");
         Sound* sound2 = JSHResourcemng::Find<Sound>(L"MoaiOK_S");
         Sound* sound3 = JSHResourcemng::Find<Sound>(L"MoaiBad_S");
+
+        if (Moai::GetScore() >= 100.0f)
+        {
+            sound1->Play(false);
+        }
+        else if (Moai::GetScore() < 100.0f and Moai::GetScore() >= 30.0f)
+        {
+            sound2->Play(false);
+        }
+        else if (Moai::GetScore() < 30.0f)
+        {
+            sound3->Play(false);
+        }
     }
     void MoaiEnd::Exit()
     {

@@ -21,11 +21,6 @@ namespace JSH
             return mScore;
         }
 
-        float SetScore(float score)
-        { 
-            mScore = score;
-        }
-
     private:
         bool mSoundPlay;
         static float mScore;

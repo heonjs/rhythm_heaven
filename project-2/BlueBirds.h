@@ -16,8 +16,13 @@ namespace JSH
         virtual void Enter();
         virtual void Exit();
 
+        static float GetScore()
+        {
+            return mScore;
+        }
+
     private:
         bool SoundPlay;
-        float BBScore;
+        static float mScore;
     };
 }

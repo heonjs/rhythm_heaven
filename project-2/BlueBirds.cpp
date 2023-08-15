@@ -14,9 +14,10 @@
 
 namespace JSH
 {
+    float BlueBirds::mScore = 0.0f;
+
     BlueBirds::BlueBirds()
         : SoundPlay(false)
-        , BBScore(0.0f)
     {
     }
     BlueBirds::~BlueBirds()

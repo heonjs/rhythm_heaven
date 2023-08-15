@@ -1,7 +1,6 @@
 #include "GleeEndImage.h"
 #include "Texture.h"
 #include "Animationmng.h"
-#include "Object.h"
 #include "Transform.h"
 #include "JSHResourcemng.h"
 #include "GleeClub.h"
