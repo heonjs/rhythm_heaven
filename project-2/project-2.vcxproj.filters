@@ -246,9 +246,6 @@
     <ClInclude Include="MoaiEnd.h">
       <Filter>Contents\Moai</Filter>
     </ClInclude>
-    <ClInclude Include="GleeClubEnd.h">
-      <Filter>Contents\GleeClub</Filter>
-    </ClInclude>
     <ClInclude Include="Soundmng.h">
       <Filter>Engine\JSHResource\Sound</Filter>
     </ClInclude>
@@ -290,6 +287,9 @@
     </ClInclude>
     <ClInclude Include="GleeClubIcon.h">
       <Filter>Contents\GleeClub\GleeClubIcon</Filter>
+    </ClInclude>
+    <ClInclude Include="GleeClubEnd.h">
+      <Filter>Contents\GleeClub</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -392,9 +392,6 @@
     <ClCompile Include="MoaiEnd.cpp">
       <Filter>Contents\Moai</Filter>
     </ClCompile>
-    <ClCompile Include="GleeClubEnd.cpp">
-      <Filter>Contents\GleeClub</Filter>
-    </ClCompile>
     <ClCompile Include="Soundmng.cpp">
       <Filter>Engine\JSHResource\Sound</Filter>
     </ClCompile>
@@ -436,6 +433,9 @@
     </ClCompile>
     <ClCompile Include="GleeClubIcon.cpp">
       <Filter>Contents\GleeClub\GleeClubIcon</Filter>
+    </ClCompile>
+    <ClCompile Include="GleeClubEnd.cpp">
+      <Filter>Contents\GleeClub</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

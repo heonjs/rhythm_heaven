@@ -155,6 +155,11 @@ namespace JSH
         {
             SceneManager::LoadScene(L"MoaiTitle");
         }
+        //MoaiEnd ∑Œ ¿Ãµø
+        if (input::GetKeyDown(eKeyCode::E))
+        {
+            SceneManager::LoadScene(L"MoaiEnd");
+        }
 
         Scene::Update();
     }

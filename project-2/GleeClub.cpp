@@ -16,8 +16,10 @@
 
 namespace JSH
 {
+    float GleeClub::mScore = 0.0f;
+
     GleeClub::GleeClub()
-        : SoundPlay(false)
+        : mSoundPlay(false)
     {
     }
     GleeClub::~GleeClub()
@@ -71,8 +73,7 @@ namespace JSH
         gn2tr->SetPosition(vector2(230.0f, 260.0f));
 
         //Glee YOU
-        Texture* You = JSHResourcemng::Load<Texture>(L"You"
-            , L"..\\Resource\\Ingame\\_You.bmp");
+        Texture* You = JSHResourcemng::Load<Texture>(L"You", L"..\\Resource\\Ingame\\_You.bmp");
         BackGround* you = object::Instantiate<BackGround>(eLayerType::UI);
         SpriteRenderer* yousr = you->AddComponent<SpriteRenderer>();
         Transform* youtr = you->GetComponent<Transform>();
@@ -89,15 +90,16 @@ namespace JSH
     void GleeClub::Update()
     {
         Sound* sound = JSHResourcemng::Find<Sound>(L"GleeMain");
+
         static float mTime = 0.0f;
 
-        if (SoundPlay == false)
+        if (mSoundPlay == false)
         {
             mTime += Time::DeltaTime();
         }
         if (mTime >= 1.0f)
         {
-            SoundPlay = true;
+            mSoundPlay = true;
             sound->Play(false);
             mTime = 0.0f;
         }
@@ -110,6 +112,10 @@ namespace JSH
         {
             SceneManager::LoadScene(L"GleeClubTitle");
         }
+        if (input::GetKeyDown(eKeyCode::E))
+        {
+            SceneManager::LoadScene(L"GleeClubEnd");
+        }
 
         Scene::Update();
     }
@@ -119,11 +125,12 @@ namespace JSH
     }
     void GleeClub::Enter()
     {
-        SoundPlay = false;
+        mSoundPlay = false;
     }
     void GleeClub::Exit()
     {
         Sound* sound = JSHResourcemng::Find<Sound>(L"GleeMain");
         sound->Stop(true);
+        mScore = 100.0f;
     }
 }

@@ -27,7 +27,7 @@ namespace JSH
         JSHResourcemng::Load<Sound>(L"BB_OK_BGM", L"..\\Resource\\sound\\OK.wav");
 
         //Ending Bad BGM
-        JSHResourcemng::Load<Sound>(L"BB_Bad_BGM", L"..\\Resource\\sound\\TryAgain.wav");
+        JSHResourcemng::Load<Sound>(L"BB_Bad_BGM", L"..\\Resource\\sound\\Bad.wav");
 
         // Blue Birds Ending
         Texture* texture1 = JSHResourcemng::Load<Texture>(L"BB_Ending_BG"
