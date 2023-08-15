@@ -10,6 +10,7 @@
 #include "Animationmng.h"
 #include "Animation.h"
 #include "Sound.h"
+#include "Moai.h"
 
 namespace JSH
 {
@@ -50,9 +51,14 @@ namespace JSH
     void MoaiEnd::Update()
     {
         //Find BGM
-        Sound* sound1 = JSHResourcemng::Find<Sound>(L"GleePerfect_S");
-        Sound* sound2 = JSHResourcemng::Find<Sound>(L"GleeOK_S");
-        Sound* sound3 = JSHResourcemng::Find<Sound>(L"GleeBad_S");
+        Sound* sound1 = JSHResourcemng::Find<Sound>(L"MoaiPerfect_S");
+        Sound* sound2 = JSHResourcemng::Find<Sound>(L"MoaiOK_S");
+        Sound* sound3 = JSHResourcemng::Find<Sound>(L"MoaiBad_S");
+
+        if (input::GetKeyDown(eKeyCode::Lbutton))
+        {
+            SceneManager::LoadScene(L"SelectScene");
+        }
 
         Scene::Update();
     }
@@ -63,11 +69,18 @@ namespace JSH
     void MoaiEnd::Enter()
     {
         //Find BGM
-        Sound* sound1 = JSHResourcemng::Find<Sound>(L"GleePerfect_S");
-        Sound* sound2 = JSHResourcemng::Find<Sound>(L"GleeOK_S");
-        Sound* sound3 = JSHResourcemng::Find<Sound>(L"GleeBad_S");
+        Sound* sound1 = JSHResourcemng::Find<Sound>(L"MoaiPerfect_S");
+        Sound* sound2 = JSHResourcemng::Find<Sound>(L"MoaiOK_S");
+        Sound* sound3 = JSHResourcemng::Find<Sound>(L"MoaiBad_S");
     }
     void MoaiEnd::Exit()
     {
+        Sound* sound1 = JSHResourcemng::Find<Sound>(L"MoaiPerfect_S");
+        Sound* sound2 = JSHResourcemng::Find<Sound>(L"MoaiOK_S");
+        Sound* sound3 = JSHResourcemng::Find<Sound>(L"MoaiBad_S");
+
+        sound1->Stop(true);
+        sound2->Stop(true);
+        sound3->Stop(true);
     }
 }

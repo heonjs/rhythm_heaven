@@ -17,6 +17,6 @@ namespace JSH
         virtual void Exit();
 
     private:
-
+        class GleeEndImage* mGleeEnd;
     };
 }

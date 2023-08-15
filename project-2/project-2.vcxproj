@@ -150,6 +150,7 @@
     <ClInclude Include="GleeClubEnd.h" />
     <ClInclude Include="GleeClubIcon.h" />
     <ClInclude Include="GleeClubTitle.h" />
+    <ClInclude Include="GleeEndImage.h" />
     <ClInclude Include="GleeNPC1.h" />
     <ClInclude Include="GleeNPC2.h" />
     <ClInclude Include="GleePlayer.h" />
@@ -204,6 +205,7 @@
     <ClCompile Include="GleeClubEnd.cpp" />
     <ClCompile Include="GleeClubIcon.cpp" />
     <ClCompile Include="GleeClubTitle.cpp" />
+    <ClCompile Include="GleeEndImage.cpp" />
     <ClCompile Include="GleeNPC1.cpp" />
     <ClCompile Include="GleeNPC2.cpp" />
     <ClCompile Include="GleePlayer.cpp" />
