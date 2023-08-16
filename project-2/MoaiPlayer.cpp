@@ -47,7 +47,7 @@ namespace JSH
 
         //Moai Touch
         JSHResourcemng::Load<Sound>(L"MoaiTap", L"..\\Resource\\sound\\Moai_Doo-Wop\\Moai_Tap.wav");
-        mp->CreateAnimationFolder(L"MoaiTouch", L"..\\Resource\\Ingame\\Moai\\Player\\Moai_Touch", vector2::Zero, 0.07f);
+        mp->CreateAnimationFolder(L"MoaiTouch", L"..\\Resource\\Ingame\\Moai\\Player\\Moai_Touch", vector2::Zero, 0.05f);
         mp->SetBmpRGB(L"MoaiTouch", 255, 0, 255);
 
         mp->PlayAnimation(L"MoaiIdle", true);
@@ -83,13 +83,14 @@ namespace JSH
 
     void MoaiPlayer::Idle()
     {
+
         Animationmng* animationmng = GetComponent<Animationmng>();
-        Sound* sound = JSHResourcemng::Find<Sound>(L"MoaiWoo");
+        Sound* sound1 = JSHResourcemng::Find<Sound>(L"MoaiWoo");
         Sound* sound2 = JSHResourcemng::Find<Sound>(L"MoaiTap");
 
         if (mPressed == true)
         {
-            sound->SetPosition(0.3f, false);
+            sound1->Play(false);
             animationmng->PlayAnimation(L"MoaiPressed", false);
             mState = eState::Pressed;
             mTime = 0.0f;
@@ -101,16 +102,44 @@ namespace JSH
 
             if (mTime >= 0.1f)
             {
-                mPressed = true;
+                sound1->Play(false);
+                animationmng->PlayAnimation(L"MoaiPressed", false);
+                mState = eState::Pressed;
+                mTime = 0.0f;
             }
-            else if (mTime < 0.1f)
+        }
+        
+        if (input::GetKeyUp(eKeyCode::Lbutton))
+        {
+            if (mTime <= 0.07f)
             {
                 sound2->Play(false);
                 animationmng->PlayAnimation(L"MoaiTouch", false);
                 mState = eState::Touch;
                 mTime = 0.0f;
-            }           
-        }       
+            }
+            else if (mTime > 0.07f)
+            {
+                mTime = 0.0f;;
+            }
+        }
+
+        //if (input::GetKey(eKeyCode::Lbutton))
+        //{
+        //    pTime += Time::DeltaTime();
+
+        //    if (pTime >= 0.1f)
+        //    {
+        //        mPressed = true;
+        //    }
+        //    else if (pTime < 0.1f)
+        //    {
+        //        sound2->Play(false);
+        //        animationmng->PlayAnimation(L"MoaiTouch", false);
+        //        mState = eState::Touch;
+        //        pTime = 0.0f;
+        //    }           
+        //}       
     }
     void MoaiPlayer::Pressed()
     {
@@ -136,6 +165,7 @@ namespace JSH
         {
             animationmng->PlayAnimation(L"MoaiIdle", true);
             mState = eState::Idle;
+            mTime = 0.0f;
         }
         if (input::GetKeyDown(eKeyCode::Lbutton))
         {
@@ -147,11 +177,18 @@ namespace JSH
     void MoaiPlayer::Touch()
     {
         Animationmng* animationmng = GetComponent<Animationmng>();
+        Sound* sound1 = JSHResourcemng::Find<Sound>(L"MoaiTap");
 
-        if (input::GetKeyUp(eKeyCode::Lbutton))
+        if (animationmng->IsActiveAnimationComplete() == true)
         {
             animationmng->PlayAnimation(L"MoaiIdle", false);
             mState = eState::Idle;
+        }
+        if (input::GetKeyDown(eKeyCode::Lbutton))
+        {
+            sound1->Play(false);
+            animationmng->PlayAnimation(L"MoaiTouch", false);
+            mState = eState::Touch;
         }
     }
 }

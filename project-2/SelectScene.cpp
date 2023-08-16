@@ -146,6 +146,13 @@ namespace JSH
     {
         Scene::Render(hdc);
     }
+    void SelectScene::onCollisionEnter()
+    {
+        
+    }
+    void SelectScene::onCollisionExit()
+    {
+    }
     void SelectScene::Enter()
     {
         Sound* sound = JSHResourcemng::Find<Sound>(L"SelectSound");

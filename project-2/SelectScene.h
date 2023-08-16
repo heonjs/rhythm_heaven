@@ -13,6 +13,9 @@ namespace JSH
         virtual void Update() override;
         virtual void Render(HDC hdc) override;
 
+        virtual void onCollisionEnter();
+        virtual void onCollisionExit();
+
         virtual void Enter();
         virtual void Exit();
 

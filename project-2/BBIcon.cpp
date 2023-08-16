@@ -59,9 +59,6 @@ namespace JSH
     void BBIcon::Update()
     {
         GameObject::Update();
-
-        Animationmng* animationmng = GetComponent<Animationmng>();
-        Collider* col = GetComponent<Collider>();
     }
     void BBIcon::Render(HDC hdc)
     {

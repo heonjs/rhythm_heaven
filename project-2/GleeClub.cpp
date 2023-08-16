@@ -131,6 +131,5 @@ namespace JSH
     {
         Sound* sound = JSHResourcemng::Find<Sound>(L"GleeMain");
         sound->Stop(true);
-        mScore = 100.0f;
     }
 }
