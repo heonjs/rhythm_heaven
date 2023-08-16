@@ -14,7 +14,6 @@ namespace JSH
 
     MoaiPlayer::MoaiPlayer()
         : mState(eState::Idle)
-        , mPressed(false)
     {
     }
     MoaiPlayer::~MoaiPlayer()
@@ -42,12 +41,12 @@ namespace JSH
         //Moai KeyUp
         JSHResourcemng::Load<Sound>(L"MoaiWop", L"..\\Resource\\sound\\Moai_Doo-Wop\\Moai_KeyUp.wav");
         mp->CreateAnimationFolder(L"MoaiKeyUp"
-            , L"..\\Resource\\Ingame\\Moai\\Player\\Moai_KeyUp", vector2::Zero, 0.07f);
+            , L"..\\Resource\\Ingame\\Moai\\Player\\Moai_KeyUp", vector2::Zero, 0.05f);
         mp->SetBmpRGB(L"MoaiKeyUp", 255, 0, 255);
 
         //Moai Touch
         JSHResourcemng::Load<Sound>(L"MoaiTap", L"..\\Resource\\sound\\Moai_Doo-Wop\\Moai_Tap.wav");
-        mp->CreateAnimationFolder(L"MoaiTouch", L"..\\Resource\\Ingame\\Moai\\Player\\Moai_Touch", vector2::Zero, 0.05f);
+        mp->CreateAnimationFolder(L"MoaiTouch", L"..\\Resource\\Ingame\\Moai\\Player\\Moai_Touch", vector2::Zero, 0.04f);
         mp->SetBmpRGB(L"MoaiTouch", 255, 0, 255);
 
         mp->PlayAnimation(L"MoaiIdle", true);
@@ -88,14 +87,6 @@ namespace JSH
         Sound* sound1 = JSHResourcemng::Find<Sound>(L"MoaiWoo");
         Sound* sound2 = JSHResourcemng::Find<Sound>(L"MoaiTap");
 
-        if (mPressed == true)
-        {
-            sound1->Play(false);
-            animationmng->PlayAnimation(L"MoaiPressed", false);
-            mState = eState::Pressed;
-            mTime = 0.0f;
-        }
-
         if (input::GetKey(eKeyCode::Lbutton))
         {
             mTime += Time::DeltaTime();
@@ -123,23 +114,6 @@ namespace JSH
                 mTime = 0.0f;;
             }
         }
-
-        //if (input::GetKey(eKeyCode::Lbutton))
-        //{
-        //    pTime += Time::DeltaTime();
-
-        //    if (pTime >= 0.1f)
-        //    {
-        //        mPressed = true;
-        //    }
-        //    else if (pTime < 0.1f)
-        //    {
-        //        sound2->Play(false);
-        //        animationmng->PlayAnimation(L"MoaiTouch", false);
-        //        mState = eState::Touch;
-        //        pTime = 0.0f;
-        //    }           
-        //}       
     }
     void MoaiPlayer::Pressed()
     {

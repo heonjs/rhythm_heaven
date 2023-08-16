@@ -26,20 +26,17 @@ namespace JSH
 
         //Glee Idle
         JSHResourcemng::Load<Sound>(L"Glee_KeyUp_S", L"..\\Resource\\sound\\Glee_Club\\Glee_Idle.wav");
-        Texture* Gleeidle = JSHResourcemng::Load<Texture>(L"GleeIdle"
-            , L"..\\Resource\\Ingame\\Glee_Club\\Glee_Idle.bmp");
+        Texture* Gleeidle = JSHResourcemng::Load<Texture>(L"GleeIdle", L"..\\Resource\\Ingame\\Glee_Club\\Glee_Idle.bmp");
         gp->CreateAnimation(L"GleeIdle", Gleeidle, vector2(0.0f, 0.0f), vector2(48.0f, 72.0f), 3);
         gp->SetBmpRGB(L"GleeIdle", 151, 151, 151);
 
         //Glee normal
-        Texture* Gleetouch = JSHResourcemng::Load<Texture>(L"GleeTouch"
-            , L"..\\Resource\\Ingame\\Glee_Club\\Glee_normal.bmp");
+        Texture* Gleetouch = JSHResourcemng::Load<Texture>(L"GleeTouch", L"..\\Resource\\Ingame\\Glee_Club\\Glee_normal.bmp");
         gp->CreateAnimation(L"GleeTouch", Gleetouch, vector2(0.0f, 0.0f), vector2(47.0f, 73.0f), 2);
         gp->SetBmpRGB(L"GleeTouch", 151, 151, 151);
 
         //Glee Close Mouth
-        Texture* Gleeclose = JSHResourcemng::Load<Texture>(L"GleeClose"
-            , L"..\\Resource\\Ingame\\Glee_Club\\Glee_Close.bmp");
+        Texture* Gleeclose = JSHResourcemng::Load<Texture>(L"GleeClose", L"..\\Resource\\Ingame\\Glee_Club\\Glee_Close.bmp");
         gp->CreateAnimation(L"GleeClose", Gleeclose, vector2(0.0f, 0.0f), vector2(48.0f, 72.0f), 3, vector2(0.0f, 0.0f), 0.05f);
         gp->SetBmpRGB(L"GleeClose", 151, 151, 151);
 
@@ -50,8 +47,7 @@ namespace JSH
         
         //Glee AH
         JSHResourcemng::Load<Sound>(L"Glee_AH_S", L"..\\Resource\\sound\\Glee_Club\\Glee_AH.wav");
-        Texture* GleeAH = JSHResourcemng::Load<Texture>(L"GleeAH"
-            , L"..\\Resource\\Ingame\\Glee_Club\\Glee_AH.bmp");
+        Texture* GleeAH = JSHResourcemng::Load<Texture>(L"GleeAH", L"..\\Resource\\Ingame\\Glee_Club\\Glee_AH.bmp");
         gp->CreateAnimation(L"GleeAH", GleeAH, vector2(0.0f, 0.0f), vector2(52.5f, 82.0f), 8);
         gp->SetBmpRGB(L"GleeAH", 151, 151, 151);
 
@@ -94,7 +90,7 @@ namespace JSH
         Animationmng* animationmng = GetComponent<Animationmng>();
         Sound* sound = JSHResourcemng::Find<Sound>(L"Glee_KeyUp_S");
 
-        if (input::GetKeyDown(eKeyCode::Lbutton))
+        if (input::GetKey(eKeyCode::Lbutton))
         {
             sound->Stop(false);
             animationmng->PlayAnimation(L"GleeClose", false);
@@ -104,6 +100,7 @@ namespace JSH
     void GleePlayer::Closing()
     {
         Animationmng* animationmng = GetComponent<Animationmng>();
+        Sound* sound = JSHResourcemng::Find<Sound>(L"Glee_Idle_S");
 
         if (input::GetKeyUp(eKeyCode::Lbutton))
         {
@@ -137,10 +134,12 @@ namespace JSH
     void GleePlayer::Touch()
     {
         Animationmng* animationmng = GetComponent<Animationmng>();
+        Sound* sound = JSHResourcemng::Find<Sound>(L"Glee_KeyUp_S");
         
         if (input::GetKeyUp(eKeyCode::Lbutton))
         {
             animationmng->PlayAnimation(L"GleeOpen", false);
+            sound->SetPosition(0.2f, true);
             mState = eState::Opening;
         }
     }

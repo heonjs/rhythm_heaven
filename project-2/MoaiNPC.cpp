@@ -10,7 +10,7 @@
 
 namespace JSH
 {
-    float MoaiNPC::mPlayTime = 0.0f;
+    int MoaiNPC::mPlayTime = 0;
 
     MoaiNPC::MoaiNPC()
         : mState(eState::Idle)
@@ -95,8 +95,8 @@ namespace JSH
         if (animationmng->IsActiveAnimationComplete() == true)
         {
             sound1->Stop(true);
-            animationmng->PlayAnimation(L"NPCIdle");
-            mState = eState::Idle;
+            animationmng->PlayAnimation(L"NPCKeyUp");
+            mState = eState::KeyUp;
         }
 
         sound1->Play(false);
@@ -111,6 +111,7 @@ namespace JSH
 
         sound->Play(false);
         animationmng->PlayAnimation(L"NPCKeyUp");
+        mState = eState::Idle;
     }
 
     void MoaiNPC::Touch()

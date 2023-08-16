@@ -148,7 +148,10 @@ namespace JSH
     }
     void SelectScene::onCollisionEnter()
     {
-        
+        if (input::GetKeyDown(eKeyCode::Lbutton))
+        {
+            
+        }
     }
     void SelectScene::onCollisionExit()
     {
