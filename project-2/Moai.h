@@ -22,7 +22,6 @@ namespace JSH
         }
 
     private:
-        bool SoundPlay;
         static float mPlayTime;
 
         static float mScore;

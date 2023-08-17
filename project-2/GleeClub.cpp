@@ -19,7 +19,6 @@ namespace JSH
     float GleeClub::mScore = 0.0f;
 
     GleeClub::GleeClub()
-        : mSoundPlay(false)
     {
     }
     GleeClub::~GleeClub()
@@ -93,17 +92,6 @@ namespace JSH
 
         static float mTime = 0.0f;
 
-        if (mSoundPlay == false)
-        {
-            mTime += Time::DeltaTime();
-        }
-        if (mTime >= 1.0f)
-        {
-            mSoundPlay = true;
-            sound->Play(false);
-            mTime = 0.0f;
-        }
-
         if (input::GetKeyDown(eKeyCode::Rbutton))
         {
             SceneManager::LoadScene(L"SelectScene");
@@ -125,7 +113,8 @@ namespace JSH
     }
     void GleeClub::Enter()
     {
-        mSoundPlay = false;
+        Sound* sound = JSHResourcemng::Find<Sound>(L"GleeMain");
+        sound->Play(false);
     }
     void GleeClub::Exit()
     {

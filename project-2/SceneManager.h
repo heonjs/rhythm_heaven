@@ -33,7 +33,7 @@ namespace JSH
         //트리(map) 자료구조 : 배열보다 처리속도가 빠르다.
         static map<wstring, Scene*> mScenes;
         static Scene* mActiveScene;
-        // wstrind == key, Scene* == value
+        // wstring == key, Scene* == value
         // key는 데이터를 검색
         // value는 실제 사용해야하는 데이터
     };

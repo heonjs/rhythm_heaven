@@ -327,6 +327,9 @@
     <ClInclude Include="BBEndImage.h">
       <Filter>Contents\BlueBirds\BBEndImage</Filter>
     </ClInclude>
+    <ClInclude Include="MoaiPattern.h">
+      <Filter>Contents\Moai\MoaiNPC</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="rhythm_heaven.cpp">
@@ -490,6 +493,9 @@
     </ClCompile>
     <ClCompile Include="BBEndImage.cpp">
       <Filter>Contents\BlueBirds\BBEndImage</Filter>
+    </ClCompile>
+    <ClCompile Include="MoaiPattern.cpp">
+      <Filter>Contents\Moai\MoaiNPC</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

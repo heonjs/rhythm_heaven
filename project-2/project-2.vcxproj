@@ -164,6 +164,7 @@
     <ClInclude Include="MoaiExplain.h" />
     <ClInclude Include="MoaiIcon.h" />
     <ClInclude Include="MoaiNPC.h" />
+    <ClInclude Include="MoaiPattern.h" />
     <ClInclude Include="MoaiPlayer.h" />
     <ClInclude Include="MoaiTitle.h" />
     <ClInclude Include="MouseCursor.h" />
@@ -224,6 +225,7 @@
     <ClCompile Include="MoaiExplain.cpp" />
     <ClCompile Include="MoaiIcon.cpp" />
     <ClCompile Include="MoaiNPC.cpp" />
+    <ClCompile Include="MoaiPattern.cpp" />
     <ClCompile Include="MoaiPlayer.cpp" />
     <ClCompile Include="MoaiTitle.cpp" />
     <ClCompile Include="MouseCursor.cpp" />

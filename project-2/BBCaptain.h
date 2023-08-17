@@ -6,6 +6,14 @@ namespace JSH
     class BBCaptain : public GameObject
     {
     public:
+        enum class eState
+        {
+            Idle,
+            Talk,
+            Fail,
+            End
+        };
+
         BBCaptain();
         virtual ~BBCaptain();
 
@@ -13,7 +21,13 @@ namespace JSH
         virtual void Update();
         virtual void Render(HDC hdc);
 
-    private:
+        void Idle();
+        void Talk();
+        void Fail();
 
+        void CptPlay();
+
+    private:
+        eState mState;
     };
 }

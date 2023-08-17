@@ -31,6 +31,6 @@ namespace JSH
         eState mState;
         static int mPlayTime;
 
-        //static map<Time*>();
+        static list<eState> MoaiPattern;
     };
 }

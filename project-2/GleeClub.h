@@ -22,7 +22,6 @@ namespace JSH
         }
 
     private:
-        bool mSoundPlay;
         static float mScore;
     };
 }

@@ -7,6 +7,7 @@
 #include "Object.h"
 #include "Texture.h"
 #include "Sound.h"
+#include "MoaiPattern.h"
 
 namespace JSH
 {
@@ -46,8 +47,6 @@ namespace JSH
         JSHResourcemng::Load<Sound>(L"NPCTap", L"..\\Resource\\sound\\Moai_Doo-Wop\\NPC_Tap.wav");
         mn->CreateAnimationFolder(L"NPCTouch", L"..\\Resource\\Ingame\\Moai\\NPC\\NPC_Touch", vector2::Zero, 0.05f);
         mn->SetBmpRGB(L"NPCTouch", 255, 0, 255);
-
-        mn->PlayAnimation(L"NPCIdle", true);
     }
     void MoaiNPC::Update()
     {
@@ -83,6 +82,9 @@ namespace JSH
     void MoaiNPC::Idle()
     {
         Animationmng* animationmng = GetComponent<Animationmng>();
+        animationmng->FindAnimation(L"NPCIdle");
+
+        animationmng->PlayAnimation(L"NPCIdle", true);
     }
 
     void MoaiNPC::Pressed()
@@ -111,7 +113,6 @@ namespace JSH
 
         sound->Play(false);
         animationmng->PlayAnimation(L"NPCKeyUp");
-        mState = eState::Idle;
     }
 
     void MoaiNPC::Touch()

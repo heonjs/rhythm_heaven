@@ -20,7 +20,6 @@ namespace JSH
     float Moai::mScore = 0.0f;
 
     Moai::Moai()
-        : SoundPlay(false)
     {
     }
     Moai::~Moai()
@@ -132,17 +131,6 @@ namespace JSH
             SceneManager::LoadScene(L"MoaiEnd");
             mPlayTime = 0.0f;
         }
-        if (SoundPlay == false)
-        {          
-            mTime += Time::DeltaTime();
-        }
-        // 사운드재생
-        if (mTime >= 1.0f)
-        {
-            SoundPlay = true;
-            sound->Play(false);
-            mTime = 0.0f;
-        }
 
         //SelectScene 으로 이동
         if (input::GetKeyDown(eKeyCode::Rbutton))
@@ -170,7 +158,8 @@ namespace JSH
     }
     void Moai::Enter()
     {
-        SoundPlay = false;
+        Sound* sound = JSHResourcemng::Find<Sound>(L"MoaiMain");
+        sound->Play(false);
     }
     void Moai::Exit()
     {
