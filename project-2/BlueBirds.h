@@ -23,6 +23,7 @@ namespace JSH
 
     private:
         static float mScore;
-        static float Cpt_xpos;
+        static float mPlayTime;
+        static float mCpt_xPos;
     };
 }

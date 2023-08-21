@@ -10,6 +10,9 @@
 
 namespace JSH
 {
+    float BBCaptain::mCptTime = 0.0f;
+    float BBCaptain::Cpt_xpos = 30.0f;
+
     BBCaptain::BBCaptain()
         :mState(eState::Idle)
     {
@@ -44,17 +47,16 @@ namespace JSH
     {
         GameObject::Update();
 
-        static float Cpt_xpos = 30.0f;
-        static int mTime = 0.0f;
-        mTime += Time::DeltaTime();
+        mCptTime += Time::DeltaTime();
 
-        if (mTime >= 10.0f);
+        if (mCptTime >= 23.0f)
         {
-            if (Cpt_xpos == -100.0f)
+            if (Cpt_xpos < -100.0f)
             {
-                int a = 0;
+                Cpt_xpos = -100.0f;
             }
-            Cpt_xpos -= 1.0f;
+
+            Cpt_xpos -= 0.5f;
         }
 
         Transform* bctr = GetComponent<Transform>();
@@ -106,9 +108,5 @@ namespace JSH
         animationmng->FindAnimation(L"Captain_Fail");
 
         animationmng->PlayAnimation(L"Captain_Fail", true);
-    }
-    void BBCaptain::CptPlay()
-    {
-
     }
 }

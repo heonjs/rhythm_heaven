@@ -2,6 +2,9 @@
 #include "JSHinput.h"
 #include "Collider.h"
 #include "Transform.h"
+#include "MoaiIcon.h"
+#include "BBIcon.h"
+#include "GleeClubIcon.h"
 
 namespace JSH
 {
@@ -17,7 +20,6 @@ namespace JSH
 
         Collider* col = AddComponent<Collider>();
         col->SetSize(vector2(10.0f, 10.0f));
-        
     }
     void MouseCursor::Update()
     {
@@ -31,5 +33,11 @@ namespace JSH
     void MouseCursor::Render(HDC hdc)
     {
         GameObject::Render(hdc);
+    }
+    void MouseCursor::OnColliderEnter(Collider* other)
+    {
+    }
+    void MouseCursor::OnColliderExit(Collider* other)
+    {
     }
 }

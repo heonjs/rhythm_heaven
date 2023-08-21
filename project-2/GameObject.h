@@ -46,7 +46,12 @@ namespace JSH
         virtual void OnColliderStay(class Collider* other);
         virtual void OnColliderExit(class Collider* other);
 
+        void SetLayerType(eLayerType LayerType) { mLayerType = LayerType; }
+        eLayerType GetLayerType() { return mLayerType; }
+
+
 	private:
 		vector<Component*> mComponents;
+        eLayerType mLayerType;
 	};
 }

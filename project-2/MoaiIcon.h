@@ -13,7 +13,11 @@ namespace JSH
         virtual void Update();
         virtual void Render(HDC hdc);
 
-    private:
+        virtual void OnColliderEnter(class Collider* other);
+        virtual void OnColliderStay(class Collider* other);
+        virtual void OnColliderExit(class Collider* other);
 
+    private:
+        class MoaiExplain* moaiEx;
     };
 }

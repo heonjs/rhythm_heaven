@@ -8,8 +8,6 @@
 #include "Object.h"
 #include "Transform.h"
 #include "Animationmng.h"
-#include "Collider.h"
-#include "Collidermng.h"
 
 namespace JSH
 {

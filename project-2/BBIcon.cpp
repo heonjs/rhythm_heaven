@@ -34,8 +34,7 @@ namespace JSH
         animationmng->CreateAnimation(L"Press_Button", Press_OK, vector2::Zero, vector2(32.0f, 26.0f), 2);
 
         //Icon
-        Texture* bbicon = JSHResourcemng::Load<Texture>(L"BlueBirdsIcon"
-            , L"..\\Resource\\GameSelect\\Blue_Birds_Icon.bmp");
+        Texture* bbicon = JSHResourcemng::Load<Texture>(L"BlueBirdsIcon", L"..\\Resource\\GameSelect\\Blue_Birds_Icon.bmp");
         Icon* ic3 = object::Instantiate<Icon>(eLayerType::Icon);
         SpriteRenderer* ic3sr = ic3->AddComponent<SpriteRenderer>();
         Transform* ic3tr = ic3->GetComponent<Transform>();
@@ -46,8 +45,7 @@ namespace JSH
         ic3col->SetSize(vector2(60.0f, 52.0f));
 
         //Frame
-        Texture* iconframe = JSHResourcemng::Load<Texture>(L"IconFrame"
-            , L"..\\Resource\\GameSelect\\\Normal_Frame.bmp");
+        Texture* iconframe = JSHResourcemng::Load<Texture>(L"IconFrame", L"..\\Resource\\GameSelect\\\Normal_Frame.bmp");
         BackGround* i3f = object::Instantiate<BackGround>(eLayerType::Effect);
         SpriteRenderer* i3fsr = i3f->AddComponent<SpriteRenderer>();
         Transform* i3ftr = i3f->GetComponent<Transform>();

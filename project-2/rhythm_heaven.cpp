@@ -134,7 +134,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
     //Gdiplus 초기화
 
     Gdiplus::GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
-	Game.Initialise(hWnd);
+	Game.Initialize(hWnd);
 
 	if (!hWnd)
 	{

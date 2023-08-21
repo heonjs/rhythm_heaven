@@ -15,7 +15,8 @@
 namespace JSH
 {
     float BlueBirds::mScore = 0.0f;
-    float BlueBirds::Cpt_xpos = 30.0f;
+    float BlueBirds::mPlayTime = 0.0f;
+    float BlueBirds::mCpt_xPos = 30.0f;
 
     BlueBirds::BlueBirds()
     {
@@ -50,8 +51,6 @@ namespace JSH
         
         //BlueBirds Captain
         BBCaptain* bc = object::Instantiate<BBCaptain>(eLayerType::BackGroundObject);
-        //Transform* bctr = bc->GetComponent<Transform>();
-        //bctr->SetPosition(vector2(Cpt_xpos, 120.0f));
 
         //BlueBirds NPC1
         BBNPC* bn1 = object::Instantiate<BBNPC>(eLayerType::NPC1);
@@ -82,8 +81,7 @@ namespace JSH
     void BlueBirds::Update()
     {
         Sound* sound = JSHResourcemng::Find<Sound>(L"BBMain_S");
-        static float mTime = 0;
-        mTime += Time::DeltaTime();
+        mPlayTime += Time::DeltaTime();
 
         if (input::GetKeyDown(eKeyCode::Rbutton))
         {
@@ -96,6 +94,11 @@ namespace JSH
         if (input::GetKeyDown(eKeyCode::E))
         {
             SceneManager::LoadScene(L"BlueBirdsEnd");
+        }
+        if (mPlayTime >= 60.0f)
+        {
+            SceneManager::LoadScene(L"BlueBirdsEnd");
+            mPlayTime = 0.0f;
         }
 
         Scene::Update();
@@ -113,5 +116,6 @@ namespace JSH
     {
         Sound* sound = JSHResourcemng::Find<Sound>(L"BBMain_S");
         sound->Stop(true);
+        mCpt_xPos = 30.0f;
     }
 }

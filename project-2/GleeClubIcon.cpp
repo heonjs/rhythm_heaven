@@ -33,8 +33,7 @@ namespace JSH
         animationmng->CreateAnimation(L"Press_Button", Press_OK, vector2::Zero, vector2(32.0f, 26.0f), 2);
 
         //Icon
-        Texture* icon2 = JSHResourcemng::Load<Texture>(L"GleeClubIcon"
-            , L"..\\Resource\\GameSelect\\Glee_Club_Icon.bmp");
+        Texture* icon2 = JSHResourcemng::Load<Texture>(L"GleeClubIcon", L"..\\Resource\\GameSelect\\Glee_Club_Icon.bmp");
         Icon* ic2 = object::Instantiate<Icon>(eLayerType::Icon);
         SpriteRenderer* ic2sr = ic2->AddComponent<SpriteRenderer>();
         Transform* ic2tr = ic2->GetComponent<Transform>();
@@ -45,8 +44,7 @@ namespace JSH
         ic2col->SetSize(vector2(60.0f, 52.0f));
 
         //Frame
-        Texture* iconframe = JSHResourcemng::Load<Texture>(L"IconFrame"
-            , L"..\\Resource\\GameSelect\\\Normal_Frame.bmp");
+        Texture* iconframe = JSHResourcemng::Load<Texture>(L"IconFrame", L"..\\Resource\\GameSelect\\\Normal_Frame.bmp");
         BackGround* i2f = object::Instantiate<BackGround>(eLayerType::Effect);
         SpriteRenderer* i2fsr = i2f->AddComponent<SpriteRenderer>();
         Transform* i2ftr = i2f->GetComponent<Transform>();

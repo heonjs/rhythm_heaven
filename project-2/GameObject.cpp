@@ -34,7 +34,7 @@ namespace JSH
 		}
 	}
     void GameObject::OnColliderEnter(Collider* other)
-    {
+    {      
     }
     void GameObject::OnColliderStay(Collider* other)
     {

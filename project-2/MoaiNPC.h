@@ -27,10 +27,13 @@ namespace JSH
         void KeyUp();
         void Touch();
 
+        void Pattern0();
+
+
     private:
         eState mState;
         static int mPlayTime;
 
-        static list<eState> MoaiPattern;
+        //static vector<int,  
     };
 }

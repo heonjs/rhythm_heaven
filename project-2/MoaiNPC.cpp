@@ -51,6 +51,11 @@ namespace JSH
     void MoaiNPC::Update()
     {
         mPlayTime += Time::DeltaTime();
+        
+        if (mPlayTime >= 2.0f)
+        {
+            mPlayTime = 0.0f;
+        }
 
         switch (mState) 
         {
@@ -123,5 +128,11 @@ namespace JSH
 
         sound->Play(false);
         animationmng->PlayAnimation(L"NPCTouch");
+    }
+    void MoaiNPC::Pattern0()
+    {
+        Pressed();
+        Touch();
+        Idle();
     }
 }

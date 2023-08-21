@@ -38,8 +38,8 @@ namespace JSH
 
         HBRUSH TransParentBrush = (HBRUSH)GetStockObject(NULL_BRUSH);
         HBRUSH OldBrush = (HBRUSH)SelectObject(hdc, TransParentBrush);
-
         HPEN pen = NULL;
+
         if (mbIsCollision)
         {
             pen = CreatePen(PS_SOLID, 2, RGB(255, 50, 50));

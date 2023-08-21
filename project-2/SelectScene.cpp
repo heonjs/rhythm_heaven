@@ -30,7 +30,8 @@ namespace JSH
     {
     }
     void SelectScene::Initialize()
-    {         
+    { 
+
         // BackGround
         Texture* texture1 = JSHResourcemng::Load<Texture>(L"SelectRight"
             , L"..\\Resource\\Title\\RightTitle.bmp");
@@ -73,6 +74,10 @@ namespace JSH
         ge1sr->SetScale(vector2(2.0f, 2.0f));
         ge1sr->SetBmpRGB(255, 0, 255);
 
+        //Mouse Cursor
+        MouseCursor* mouse = object::Instantiate<MouseCursor>(eLayerType::Cursor);
+        Collidermng::ColliderLayerCheck(eLayerType::Icon, eLayerType::Cursor, true);
+
         //Moai Icon
         MoaiIcon* moaiicon = object::Instantiate<MoaiIcon>(eLayerType::Icon);
 
@@ -82,10 +87,6 @@ namespace JSH
         //BlueBirds Icon
         BBIcon* bbicon = object::Instantiate<BBIcon>(eLayerType::Icon);
 
-        //Mouse Cursor
-        MouseCursor* mouse = object::Instantiate<MouseCursor>(eLayerType::Cursor);
-        Collidermng::ColliderLayerCheck(eLayerType::Icon, eLayerType::Cursor, true);
-
         //Select BGM
         JSHResourcemng::Load<Sound>(L"SelectSound", L"..\\Resource\\Sound\\Game_Select.wav");      
     }
@@ -94,16 +95,6 @@ namespace JSH
         vector2 mp = input::GetMousepos();
         
         Sound* sound = JSHResourcemng::Find<Sound>(L"SelectSound");
-
-        if (546.0f <= mp.x and mp.x <= 606.0f and
-            115.0f <= mp.y and mp.y <= 173.0f)
-        {
-            if (input::GetKeyDown(eKeyCode::Lbutton))
-            {
-                sound->Stop(false);
-                SceneManager::LoadScene(L"MoaiTitle");
-            }
-        }
 
         if (546.0f <= mp.x and mp.x <= 606.0f and
             238.0f <= mp.y and mp.y <= 290.0f)
@@ -145,16 +136,6 @@ namespace JSH
     void SelectScene::Render(HDC hdc)
     {
         Scene::Render(hdc);
-    }
-    void SelectScene::onCollisionEnter()
-    {
-        if (input::GetKeyDown(eKeyCode::Lbutton))
-        {
-            
-        }
-    }
-    void SelectScene::onCollisionExit()
-    {
     }
     void SelectScene::Enter()
     {

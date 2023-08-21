@@ -25,9 +25,9 @@ namespace JSH
         void Talk();
         void Fail();
 
-        void CptPlay();
-
     private:
         eState mState;
+        static float mCptTime;
+        static float Cpt_xpos;
     };
 }

@@ -15,9 +15,9 @@ namespace JSH
         virtual void Update() override;
         virtual void Render(HDC hdc) override;
 
-        void OnColliderEnter(Collider* other);
-        void OnColliderStay(Collider* other);
-        void OnColliderExit(Collider* other);
+        virtual void OnColliderEnter(Collider* other);
+        virtual void OnColliderStay(Collider* other);
+        virtual void OnColliderExit(Collider* other);
 
         vector2 GetSize()
         {
@@ -40,7 +40,10 @@ namespace JSH
         { 
             return mPosition; 
         }
-
+        void SetPosition(vector2 position)
+        {
+            mPosition = position;
+        }
         UINT GetCollisionNumber()
         { 
             return mCollisionNumber;

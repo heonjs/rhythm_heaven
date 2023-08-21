@@ -12,7 +12,7 @@ namespace JSH
 		game();
 		~game();
 
-		void Initialise(HWND hwnd);
+		void Initialize(HWND hwnd);
 		void Run();
 		void Update();
 		void Render();

@@ -22,7 +22,7 @@ namespace JSH
 	{
 	}
 
-	void game::Initialise(HWND hwnd)
+	void game::Initialize(HWND hwnd)
 	{
 		mHWND = hwnd;
 		mHDC = GetDC(mHWND);
