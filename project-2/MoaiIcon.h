@@ -19,5 +19,6 @@ namespace JSH
 
     private:
         class MoaiExplain* moaiEx;
+        class MoaiExTitle* moaiExt;
     };
 }

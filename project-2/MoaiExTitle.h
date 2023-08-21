@@ -3,11 +3,11 @@
 
 namespace JSH
 {
-    class GleeClubExplain : public GameObject
+    class MoaiExTitle : public GameObject
     {
     public:
-        GleeClubExplain();
-        virtual ~GleeClubExplain();
+        MoaiExTitle();
+        virtual ~MoaiExTitle();
 
         virtual void Initialize();
         virtual void Update();

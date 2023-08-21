@@ -12,6 +12,7 @@
 #include "MoaiExplain.h"
 #include "SceneManager.h"
 #include "Sound.h"
+#include "MoaiExTitle.h"
 
 namespace JSH
 {
@@ -28,6 +29,9 @@ namespace JSH
 
         Animationmng* animationmng = AddComponent<Animationmng>();
         animationmng->SetScale(vector2(2.0f, 2.0f));
+
+        Animationmng* animationmng1 = AddComponent<Animationmng>();
+        animationmng1->SetScale(vector2(2.0f, 2.0f));
 
         Collider* col = AddComponent<Collider>();
         col->SetSize(vector2(60.0f, 52.0f));
@@ -63,6 +67,11 @@ namespace JSH
         Transform* extr = moaiEx->GetComponent<Transform>();
         extr->SetPosition(vector2(192.0f, 320.0f));
 
+        //Moai Explain Title
+        moaiExt = object::Instantiate<MoaiExTitle>(eLayerType::Explain);
+        Transform* exttr = moaiExt->GetComponent<Transform>();
+        exttr->SetPosition(vector2(192.0f, 150.0f));
+
         animationmng->PlayAnimation(L"MoaiIcon");
     }
     void MoaiIcon::Update()
@@ -76,8 +85,11 @@ namespace JSH
     void MoaiIcon::OnColliderEnter(Collider* other)
     {
         Animationmng* animationmng = GetComponent<Animationmng>();
+
         animationmng->PlayAnimation(L"OKButton");
-        moaiEx->SetTrigger(true);        
+        moaiEx->SetTrigger(true);      
+        moaiExt->SetTrigger(true);
+
     }
     void MoaiIcon::OnColliderStay(Collider* other)
     {
@@ -99,5 +111,6 @@ namespace JSH
         Animationmng* animationmng = GetComponent<Animationmng>();       
         animationmng->PlayAnimation(L"MoaiIcon");
         moaiEx->SetTrigger(false);
+        moaiExt->SetTrigger(false);
     }
 }

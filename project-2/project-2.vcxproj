@@ -162,6 +162,7 @@
     <ClInclude Include="MoaiEnd.h" />
     <ClInclude Include="MoaiEndImage.h" />
     <ClInclude Include="MoaiExplain.h" />
+    <ClInclude Include="MoaiExTitle.h" />
     <ClInclude Include="MoaiIcon.h" />
     <ClInclude Include="MoaiNPC.h" />
     <ClInclude Include="MoaiPattern.h" />
@@ -223,6 +224,7 @@
     <ClCompile Include="MoaiEnd.cpp" />
     <ClCompile Include="MoaiEndImage.cpp" />
     <ClCompile Include="MoaiExplain.cpp" />
+    <ClCompile Include="MoaiExTitle.cpp" />
     <ClCompile Include="MoaiIcon.cpp" />
     <ClCompile Include="MoaiNPC.cpp" />
     <ClCompile Include="MoaiPattern.cpp" />

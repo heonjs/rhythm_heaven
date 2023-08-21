@@ -24,24 +24,12 @@ namespace JSH
         Animationmng* animationmng = AddComponent<Animationmng>();
         animationmng->SetScale(vector2(2.0f, 2.0f));
 
-        //OK Button
-        Texture* OK_Button = JSHResourcemng::Load<Texture>(L"OK_Button", L"..\\Resource\\GameSelect\\OK_Button.bmp");
-        animationmng->CreateAnimation(L"OKButton", OK_Button, vector2::Zero, vector2(32.0f, 26.0f), 1);
+        Collider* col = AddComponent<Collider>();
+        col->SetSize(vector2(60.0f, 52.0f));
+        col->SetPosition(vector2(576.0f, 264.0f));
 
-        //OK Button Pressed
-        Texture* Press_OK = JSHResourcemng::Load<Texture>(L"Press", L"..\\Resource\\GameSelect\\Press_OK.bmp");
-        animationmng->CreateAnimation(L"Press_Button", Press_OK, vector2::Zero, vector2(32.0f, 26.0f), 2);
-
-        //Icon
-        Texture* icon2 = JSHResourcemng::Load<Texture>(L"GleeClubIcon", L"..\\Resource\\GameSelect\\Glee_Club_Icon.bmp");
-        Icon* ic2 = object::Instantiate<Icon>(eLayerType::Icon);
-        SpriteRenderer* ic2sr = ic2->AddComponent<SpriteRenderer>();
-        Transform* ic2tr = ic2->GetComponent<Transform>();
-        Collider* ic2col = ic2->AddComponent<Collider>();
-        ic2tr->SetPosition(vector2(576.0f, 264.0f));
-        ic2sr->SetTexture(icon2);
-        ic2sr->SetScale(vector2(2.0f, 2.0f));
-        ic2col->SetSize(vector2(60.0f, 52.0f));
+        Transform* tr = GetComponent<Transform>();
+        tr->SetPosition(vector2(576.0f, 264.0f));
 
         //Frame
         Texture* iconframe = JSHResourcemng::Load<Texture>(L"IconFrame", L"..\\Resource\\GameSelect\\\Normal_Frame.bmp");
@@ -52,6 +40,20 @@ namespace JSH
         i2fsr->SetTexture(iconframe);
         i2fsr->SetScale(vector2(2.0f, 2.0f));
         i2fsr->SetBmpRGB(255, 0, 255);
+
+        //OK Button
+        Texture* OK_Button = JSHResourcemng::Load<Texture>(L"OK_Button", L"..\\Resource\\GameSelect\\OK_Button.bmp");
+        animationmng->CreateAnimation(L"OKButton", OK_Button, vector2::Zero, vector2(32.0f, 26.0f), 1);
+
+        //OK Button Pressed
+        Texture* Press_OK = JSHResourcemng::Load<Texture>(L"Press", L"..\\Resource\\GameSelect\\Press_OK.bmp");
+        animationmng->CreateAnimation(L"Press_Button", Press_OK, vector2::Zero, vector2(32.0f, 26.0f), 2);
+
+        //Icon
+        Texture* icon2 = JSHResourcemng::Load<Texture>(L"GleeClubIcon", L"..\\Resource\\GameSelect\\Glee_Club_Icon.bmp");
+        animationmng->CreateAnimation(L"GleeClubIcon", icon2, vector2::Zero, vector2(30.0f, 26.0f), 1);
+
+        animationmng->PlayAnimation(L"GleeClubIcon");
     }
     void GleeClubIcon::Update()
     {
@@ -60,5 +62,15 @@ namespace JSH
     void GleeClubIcon::Render(HDC hdc)
     {
         GameObject::Render(hdc);
+    }
+    void GleeClubIcon::OnColliderEnter(Collider* other)
+    {
+        Animationmng* animationmng = GetComponent<Animationmng>();
+    }
+    void GleeClubIcon::OnColliderStay(Collider* other)
+    {
+    }
+    void GleeClubIcon::OnColliderExit(Collider* other)
+    {
     }
 }
