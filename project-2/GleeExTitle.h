@@ -3,11 +3,11 @@
 
 namespace JSH
 {
-    class BlueBirdsExplain : public GameObject
+    class GleeExTitle : public GameObject
     {
     public:
-        BlueBirdsExplain();
-        virtual ~BlueBirdsExplain();
+        GleeExTitle();
+        virtual ~GleeExTitle();
 
         virtual void Initialize();
         virtual void Update();

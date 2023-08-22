@@ -14,9 +14,6 @@
 #include "MoaiIcon.h"
 #include "GleeClubIcon.h"
 #include "BBIcon.h"
-#include "BlueBirdsExplain.h"
-#include "GleeClubExplain.h"
-#include "MoaiExplain.h"
 
 namespace JSH
 {
@@ -95,36 +92,6 @@ namespace JSH
         vector2 mp = input::GetMousepos();
         
         Sound* sound = JSHResourcemng::Find<Sound>(L"SelectSound");
-
-        if (546.0f <= mp.x and mp.x <= 606.0f and
-            238.0f <= mp.y and mp.y <= 290.0f)
-        {
-            if (input::GetKeyDown(eKeyCode::Lbutton))
-            {
-                sound->Stop(false);
-                SceneManager::LoadScene(L"GleeClubTitle");
-            }
-        }
-
-        if (546.0f <= mp.x and mp.x <= 606.0f and
-            358.0f <= mp.y and mp.y <= 410.0f)
-        {
-            if (input::GetKeyDown(eKeyCode::Lbutton))
-            {
-                sound->Stop(false);
-                SceneManager::LoadScene(L"BlueBirdsTitle");
-            }
-        }
-
-        if (546.0f <= mp.x and mp.x <= 606.0f and
-            499.0f <= mp.y and mp.y <= 551.0f)
-        {
-            if (input::GetKeyDown(eKeyCode::Lbutton))
-            {
-                //sound->Stop(false);
-                //SceneManager::LoadScene(L"CafeScene");
-            }
-        }
 
         if (input::GetKeyDown(eKeyCode::R))
         {

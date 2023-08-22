@@ -18,6 +18,7 @@ namespace JSH
         virtual void OnColliderExit(class Collider* other);
 
     private:
-
+        class GleeClubExplain* mGleeEx;
+        class GleeExTitle* mGleeExt;
     };
 }

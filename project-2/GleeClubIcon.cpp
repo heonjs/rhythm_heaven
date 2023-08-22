@@ -8,10 +8,16 @@
 #include "SpriteRenderer.h"
 #include "BackGround.h"
 #include "Animationmng.h"
+#include "GleeClubExplain.h"
+#include "JSHinput.h"
+#include "Sound.h"
+#include "GleeExTitle.h"
 
 namespace JSH
 {
     GleeClubIcon::GleeClubIcon()
+        : mGleeEx{ nullptr }
+        , mGleeExt{ nullptr }
     {
     }
     GleeClubIcon::~GleeClubIcon()
@@ -47,11 +53,21 @@ namespace JSH
 
         //OK Button Pressed
         Texture* Press_OK = JSHResourcemng::Load<Texture>(L"Press", L"..\\Resource\\GameSelect\\Press_OK.bmp");
-        animationmng->CreateAnimation(L"Press_Button", Press_OK, vector2::Zero, vector2(32.0f, 26.0f), 2);
+        animationmng->CreateAnimation(L"Press_Button", Press_OK, vector2::Zero, vector2(32.0f, 26.0f), 1);
 
         //Icon
         Texture* icon2 = JSHResourcemng::Load<Texture>(L"GleeClubIcon", L"..\\Resource\\GameSelect\\Glee_Club_Icon.bmp");
         animationmng->CreateAnimation(L"GleeClubIcon", icon2, vector2::Zero, vector2(30.0f, 26.0f), 1);
+
+        //Game Explain
+        mGleeEx = object::Instantiate<GleeClubExplain>(eLayerType::Explain);
+        Transform* getr = mGleeEx->GetComponent<Transform>();
+        getr->SetPosition(vector2(192.0f, 320.0f));
+
+        //Ex Title
+        mGleeExt = object::Instantiate<GleeExTitle>(eLayerType::Explain);
+        Transform* gettr = mGleeExt->GetComponent<Transform>();
+        gettr->SetPosition(vector2(160.0f, 180.0f));
 
         animationmng->PlayAnimation(L"GleeClubIcon");
     }
@@ -66,11 +82,31 @@ namespace JSH
     void GleeClubIcon::OnColliderEnter(Collider* other)
     {
         Animationmng* animationmng = GetComponent<Animationmng>();
+
+        animationmng->PlayAnimation(L"OKButton");
+        mGleeEx->SetTrigger(true);
+        mGleeExt->SetTrigger(true);
     }
     void GleeClubIcon::OnColliderStay(Collider* other)
     {
+        Sound* sound = JSHResourcemng::Find<Sound>(L"SelectSound");
+        Animationmng* animationmng = GetComponent<Animationmng>();
+
+        if (input::GetKey(eKeyCode::Lbutton))
+        {
+            animationmng->PlayAnimation(L"Press_Button");
+        }
+        if (input::GetKeyUp(eKeyCode::Lbutton))
+        {
+            sound->Stop(true);
+            SceneManager::LoadScene(L"GleeClubTitle");
+        }
     }
     void GleeClubIcon::OnColliderExit(Collider* other)
     {
+        Animationmng* animationmng = GetComponent<Animationmng>();
+        animationmng->PlayAnimation(L"GleeClubIcon");
+        mGleeEx->SetTrigger(false);
+        mGleeExt->SetTrigger(false);
     }
 }

@@ -148,9 +148,6 @@
     <Filter Include="Contents\SelectScene\BBIcon\BlueBirdsExplain">
       <UniqueIdentifier>{3d631233-f88f-4e2b-ac30-99d1ce8dac1b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Contents\SelectScene\MoaiIcon\MoaiExTitle">
-      <UniqueIdentifier>{7d076fb5-de0e-4631-8a92-41c4f7468d52}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -334,7 +331,13 @@
       <Filter>Contents\Moai\MoaiNPC</Filter>
     </ClInclude>
     <ClInclude Include="MoaiExTitle.h">
-      <Filter>Contents\SelectScene\MoaiIcon\MoaiExTitle</Filter>
+      <Filter>Contents\SelectScene\MoaiIcon\MoaiExplain</Filter>
+    </ClInclude>
+    <ClInclude Include="GleeExTitle.h">
+      <Filter>Contents\SelectScene\GleeClubIcon\GleeClubExplain</Filter>
+    </ClInclude>
+    <ClInclude Include="BlueBirdsExTitle.h">
+      <Filter>Contents\SelectScene\BBIcon\BlueBirdsExplain</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -504,7 +507,13 @@
       <Filter>Contents\Moai\MoaiNPC</Filter>
     </ClCompile>
     <ClCompile Include="MoaiExTitle.cpp">
-      <Filter>Contents\SelectScene\MoaiIcon\MoaiExTitle</Filter>
+      <Filter>Contents\SelectScene\MoaiIcon\MoaiExplain</Filter>
+    </ClCompile>
+    <ClCompile Include="GleeExTitle.cpp">
+      <Filter>Contents\SelectScene\GleeClubIcon\GleeClubExplain</Filter>
+    </ClCompile>
+    <ClCompile Include="BlueBirdsExTitle.cpp">
+      <Filter>Contents\SelectScene\BBIcon\BlueBirdsExplain</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

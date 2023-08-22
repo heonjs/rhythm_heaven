@@ -18,6 +18,7 @@ namespace JSH
 {
     MoaiIcon::MoaiIcon()
         : moaiEx{ nullptr }
+        , moaiExt{ nullptr }
     {      
     }
     MoaiIcon::~MoaiIcon()
@@ -56,7 +57,7 @@ namespace JSH
 
         //OK Button Pressed
         Texture* Press_OK = JSHResourcemng::Load<Texture>(L"Press", L"..\\Resource\\GameSelect\\Press_OK.bmp");
-        animationmng->CreateAnimation(L"Press_Button", Press_OK, vector2::Zero, vector2(32.0f, 26.0f), 2);
+        animationmng->CreateAnimation(L"Press_Button", Press_OK, vector2::Zero, vector2(32.0f, 26.0f), 1);
         
         //Icon
         Texture* icon1 = JSHResourcemng::Load<Texture>(L"MoaiIcon", L"..\\Resource\\GameSelect\\Moai_Icon.bmp");
@@ -70,7 +71,7 @@ namespace JSH
         //Moai Explain Title
         moaiExt = object::Instantiate<MoaiExTitle>(eLayerType::Explain);
         Transform* exttr = moaiExt->GetComponent<Transform>();
-        exttr->SetPosition(vector2(192.0f, 150.0f));
+        exttr->SetPosition(vector2(160.0f, 180.0f));
 
         animationmng->PlayAnimation(L"MoaiIcon");
     }
@@ -98,7 +99,7 @@ namespace JSH
 
         if (input::GetKey(eKeyCode::Lbutton))
         {           
-            animationmng->PlayAnimation(L"Press_Button", true);
+            animationmng->PlayAnimation(L"Press_Button");
         }
         if (input::GetKeyUp(eKeyCode::Lbutton))
         {

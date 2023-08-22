@@ -3,11 +3,11 @@
 #include "Animationmng.h"
 #include "Transform.h"
 #include "JSHResourcemng.h"
-#include "JSHinput.h"
 
 namespace JSH
 {
     BlueBirdsExplain::BlueBirdsExplain()
+        : mTrigger(false)
     {
     }
     BlueBirdsExplain::~BlueBirdsExplain()
@@ -19,23 +19,22 @@ namespace JSH
 
         Animationmng* animationmng = AddComponent<Animationmng>();
 
-
-        //BlueBIrds Mini Title
-        Texture* BB_MT = JSHResourcemng::Load<Texture>(L"BB_mt", L"..\\Resource\\Ingame\\Blue_Bird\\BB_MiniTitle.bmp");
-
-
         //BlueBirds Explain
-        Texture* BB_Ex = JSHResourcemng::Load<Texture>(L"BB_ex", L"..\\Resource\\Ingame\\Blue_Bird\\BB_Ex.bmp");
+        Texture* BBEx = JSHResourcemng::Load<Texture>(L"BB_ex", L"..\\Resource\\Ingame\\Blue_Bird\\BB_Explain.bmp");
+        animationmng->CreateAnimation(L"BB_Ex", BBEx, vector2::Zero, vector2(200.0f, 150.0f), 1);
+        animationmng->SetScale(vector2(1.2f, 1.2f));
+
+        animationmng->PlayAnimation(L"BB_Ex");
     }
     void BlueBirdsExplain::Update()
     {
         GameObject::Update();
-
-        Animationmng* animationmng = GetComponent<Animationmng>();
-
     }
     void BlueBirdsExplain::Render(HDC hdc)
     {
-        GameObject::Render(hdc);
+        if (mTrigger == true)
+        {
+            GameObject::Render(hdc);
+        }
     }
 }

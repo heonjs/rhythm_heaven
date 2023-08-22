@@ -42,6 +42,7 @@ namespace JSH
         animationmng->CreateAnimation(L"Captain_Fail", Captain_Fail, vector2(0.0f, 0.0f), vector2(58.0f, 80.0f), 1);
         animationmng->SetBmpRGB(L"Captain_Fail", 227, 178, 255);
 
+        animationmng->PlayAnimation(L"Captain_Idle", true);
     }
     void BBCaptain::Update()
     {
@@ -88,7 +89,7 @@ namespace JSH
         Animationmng* animationmng = GetComponent<Animationmng>();
         animationmng->FindAnimation(L"Captain_Idle");
 
-        animationmng->PlayAnimation(L"Captain_Idle", true);
+        //animationmng->PlayAnimation(L"Captain_Idle", true);
     }
     void BBCaptain::Talk()
     {
