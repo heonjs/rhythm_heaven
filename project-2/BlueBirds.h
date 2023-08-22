@@ -22,8 +22,9 @@ namespace JSH
         }
 
     private:
+        class BBTouchScreen* mTouchScreen;
+
         static float mScore;
         static float mPlayTime;
-        static float mCpt_xPos;
     };
 }

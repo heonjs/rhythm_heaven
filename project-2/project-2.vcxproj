@@ -138,6 +138,7 @@
     <ClInclude Include="BBIcon.h" />
     <ClInclude Include="BBNPC.h" />
     <ClInclude Include="BBPlayer.h" />
+    <ClInclude Include="BBTouchScreen.h" />
     <ClInclude Include="BlueBirds.h" />
     <ClInclude Include="BlueBirdsEnd.h" />
     <ClInclude Include="BlueBirdsExplain.h" />
@@ -203,6 +204,7 @@
     <ClCompile Include="BBIcon.cpp" />
     <ClCompile Include="BBNPC.cpp" />
     <ClCompile Include="BBPlayer.cpp" />
+    <ClCompile Include="BBTouchScreen.cpp" />
     <ClCompile Include="BlueBirds.cpp" />
     <ClCompile Include="BlueBirdsEnd.cpp" />
     <ClCompile Include="BlueBirdsExplain.cpp" />

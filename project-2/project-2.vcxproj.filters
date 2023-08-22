@@ -148,6 +148,9 @@
     <Filter Include="Contents\SelectScene\BBIcon\BlueBirdsExplain">
       <UniqueIdentifier>{3d631233-f88f-4e2b-ac30-99d1ce8dac1b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Contents\BlueBirds\BBTouchScreen">
+      <UniqueIdentifier>{1b1de8f1-e1c6-4e9d-9161-16612c3c227b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -339,6 +342,9 @@
     <ClInclude Include="BlueBirdsExTitle.h">
       <Filter>Contents\SelectScene\BBIcon\BlueBirdsExplain</Filter>
     </ClInclude>
+    <ClInclude Include="BBTouchScreen.h">
+      <Filter>Contents\BlueBirds\BBTouchScreen</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="rhythm_heaven.cpp">
@@ -514,6 +520,9 @@
     </ClCompile>
     <ClCompile Include="BlueBirdsExTitle.cpp">
       <Filter>Contents\SelectScene\BBIcon\BlueBirdsExplain</Filter>
+    </ClCompile>
+    <ClCompile Include="BBTouchScreen.cpp">
+      <Filter>Contents\BlueBirds\BBTouchScreen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

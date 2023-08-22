@@ -11,14 +11,16 @@
 #include "BBNPC.h"
 #include "BBPlayer.h"
 #include "BBCaptain.h"
+#include "BBTouchScreen.h"
+#include "Collider.h"
 
 namespace JSH
 {
     float BlueBirds::mScore = 0.0f;
     float BlueBirds::mPlayTime = 0.0f;
-    float BlueBirds::mCpt_xPos = 30.0f;
 
     BlueBirds::BlueBirds()
+        : mTouchScreen{ nullptr }
     {
     }
     BlueBirds::~BlueBirds()
@@ -40,14 +42,18 @@ namespace JSH
         bbsr->SetScale(vector2(2.0f, 2.25f));
 
         //BlueBirds TouchScreen
-        Texture* texture2 = JSHResourcemng::Load<Texture>(L"BlueBirdsTouchScreen"
-            , L"..\\Resource\\Ingame\\Blue_Bird\\TouchScreen.bmp");
-        BackGround* bt = object::Instantiate<BackGround>(eLayerType::TouchScreen);
-        SpriteRenderer* btsr = bt->AddComponent<SpriteRenderer>();
-        Transform* bttr = bt->GetComponent<Transform>();
-        bttr->SetPosition(vector2(576.0f, 288.0f));
-        btsr->SetTexture(texture2);
-        btsr->SetScale(vector2(2.0f, 2.25f));
+        //Texture* texture2 = JSHResourcemng::Load<Texture>(L"BlueBirdsTouchScreen"
+        //    , L"..\\Resource\\Ingame\\Blue_Bird\\TouchScreen.bmp");
+        //BackGround* bt = object::Instantiate<BackGround>(eLayerType::TouchScreen);
+        //SpriteRenderer* btsr = bt->AddComponent<SpriteRenderer>();
+        //Transform* bttr = bt->GetComponent<Transform>();
+        //bttr->SetPosition(vector2(576.0f, 288.0f));
+        //btsr->SetTexture(texture2);
+        //btsr->SetScale(vector2(2.0f, 2.25f));
+
+        mTouchScreen = object::Instantiate<BBTouchScreen>(eLayerType::TouchScreen);
+        Collider* Tcol = mTouchScreen->AddComponent<Collider>();
+        Tcol->SetSize(vector2(2.0f, 2.5f));
         
         //BlueBirds Captain
         BBCaptain* bc = object::Instantiate<BBCaptain>(eLayerType::BackGroundObject);
@@ -116,6 +122,5 @@ namespace JSH
     {
         Sound* sound = JSHResourcemng::Find<Sound>(L"BBMain_S");
         sound->Stop(true);
-        mCpt_xPos = 30.0f;
     }
 }

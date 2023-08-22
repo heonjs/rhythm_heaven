@@ -57,7 +57,7 @@ namespace JSH
                 Cpt_xpos = -100.0f;
             }
 
-            Cpt_xpos -= 0.5f;
+            Cpt_xpos -= 1.0f;
         }
 
         Transform* bctr = GetComponent<Transform>();
