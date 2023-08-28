@@ -6,6 +6,8 @@ namespace JSH
 {
     Animationmng::Animationmng()
         :Component(eComponentType::Animationmng)
+        , mActiveAnimation{ nullptr }
+        , mbLoop(false)
         , mAlpha(1.0f)
         , mScale(vector2::One)
     {

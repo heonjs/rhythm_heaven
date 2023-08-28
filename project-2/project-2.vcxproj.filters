@@ -151,6 +151,9 @@
     <Filter Include="Contents\BlueBirds\BBTouchScreen">
       <UniqueIdentifier>{1b1de8f1-e1c6-4e9d-9161-16612c3c227b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Contents\BlueBirds\BBMemories">
+      <UniqueIdentifier>{cd5d0497-a10e-4484-80c0-711a184610e5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -345,6 +348,9 @@
     <ClInclude Include="BBTouchScreen.h">
       <Filter>Contents\BlueBirds\BBTouchScreen</Filter>
     </ClInclude>
+    <ClInclude Include="BBMemories.h">
+      <Filter>Contents\BlueBirds\BBMemories</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="rhythm_heaven.cpp">
@@ -523,6 +529,9 @@
     </ClCompile>
     <ClCompile Include="BBTouchScreen.cpp">
       <Filter>Contents\BlueBirds\BBTouchScreen</Filter>
+    </ClCompile>
+    <ClCompile Include="BBMemories.cpp">
+      <Filter>Contents\BlueBirds\BBMemories</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

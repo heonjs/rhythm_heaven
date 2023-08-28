@@ -136,6 +136,7 @@
     <ClInclude Include="BBCaptain.h" />
     <ClInclude Include="BBEndImage.h" />
     <ClInclude Include="BBIcon.h" />
+    <ClInclude Include="BBMemories.h" />
     <ClInclude Include="BBNPC.h" />
     <ClInclude Include="BBPlayer.h" />
     <ClInclude Include="BBTouchScreen.h" />
@@ -202,6 +203,7 @@
     <ClCompile Include="BBCaptain.cpp" />
     <ClCompile Include="BBEndImage.cpp" />
     <ClCompile Include="BBIcon.cpp" />
+    <ClCompile Include="BBMemories.cpp" />
     <ClCompile Include="BBNPC.cpp" />
     <ClCompile Include="BBPlayer.cpp" />
     <ClCompile Include="BBTouchScreen.cpp" />

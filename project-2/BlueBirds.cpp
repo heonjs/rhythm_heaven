@@ -13,6 +13,7 @@
 #include "BBCaptain.h"
 #include "BBTouchScreen.h"
 #include "Collider.h"
+#include "BBMemories.h"
 
 namespace JSH
 {
@@ -51,9 +52,15 @@ namespace JSH
         //btsr->SetTexture(texture2);
         //btsr->SetScale(vector2(2.0f, 2.25f));
 
+        //Touch Screen Collider
         mTouchScreen = object::Instantiate<BBTouchScreen>(eLayerType::TouchScreen);
         Collider* Tcol = mTouchScreen->AddComponent<Collider>();
         Tcol->SetSize(vector2(2.0f, 2.5f));
+
+        //BlueBirds Memories
+        BBMemories* bm = object::Instantiate<BBMemories>(eLayerType::Ingame);
+        Transform* bmtr = bm->GetComponent<Transform>();
+        bmtr->SetPosition(vector2(192.0f, 136.0f));
         
         //BlueBirds Captain
         BBCaptain* bc = object::Instantiate<BBCaptain>(eLayerType::BackGroundObject);

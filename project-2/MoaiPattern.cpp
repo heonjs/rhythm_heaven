@@ -3,4 +3,10 @@
 
 namespace JSH
 {
+    MoaiPattern::MoaiPattern()
+    {
+    }
+    MoaiPattern::~MoaiPattern()
+    {
+    }
 }

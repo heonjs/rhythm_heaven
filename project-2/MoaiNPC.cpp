@@ -10,11 +10,13 @@
 #include "MoaiPattern.h"
 
 namespace JSH
-{
-    int MoaiNPC::mPlayTime = 0;
+{ 
+    float MoaiNPC::mPlayTime = 0.0f;
+    map<int, MoaiNPC::eState> MoaiNPC::mPattern = {};
 
     MoaiNPC::MoaiNPC()
         : mState(eState::Idle)
+        , mFlag(false)
     {
     }
     MoaiNPC::~MoaiNPC()
@@ -52,9 +54,10 @@ namespace JSH
     {
         mPlayTime += Time::DeltaTime();
         
-        if (mPlayTime >= 2.0f)
+        if (mPlayTime >= 4.0f and mFlag == false)
         {
-            mPlayTime = 0.0f;
+            Pattern();
+            mFlag = true;
         }
 
         switch (mState) 
@@ -129,10 +132,10 @@ namespace JSH
         sound->Play(false);
         animationmng->PlayAnimation(L"NPCTouch");
     }
-    void MoaiNPC::Pattern0()
+
+    void MoaiNPC::Pattern()
     {
-        Pressed();
-        Touch();
-        Idle();
+        mState = eState::Pressed;
+        mFlag = true;
     }
 }
