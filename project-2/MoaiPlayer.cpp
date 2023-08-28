@@ -34,14 +34,12 @@ namespace JSH
 
         //Moai Pressed
         JSHResourcemng::Load<Sound>(L"MoaiWoo", L"..\\Resource\\sound\\Moai_Doo-Wop\\Moai_Woo.wav");
-        mp->CreateAnimationFolder(L"MoaiPressed"
-            , L"..\\Resource\\Ingame\\Moai\\Player\\Moai_Pressed", vector2::Zero, 0.05f);
+        mp->CreateAnimationFolder(L"MoaiPressed", L"..\\Resource\\Ingame\\Moai\\Player\\Moai_Pressed", vector2::Zero, 0.05f);
         mp->SetBmpRGB(L"MoaiPressed", 255, 0, 255);
 
         //Moai KeyUp
         JSHResourcemng::Load<Sound>(L"MoaiWop", L"..\\Resource\\sound\\Moai_Doo-Wop\\Moai_KeyUp.wav");
-        mp->CreateAnimationFolder(L"MoaiKeyUp"
-            , L"..\\Resource\\Ingame\\Moai\\Player\\Moai_KeyUp", vector2::Zero, 0.05f);
+        mp->CreateAnimationFolder(L"MoaiKeyUp", L"..\\Resource\\Ingame\\Moai\\Player\\Moai_KeyUp", vector2::Zero, 0.05f);
         mp->SetBmpRGB(L"MoaiKeyUp", 255, 0, 255);
 
         //Moai Touch

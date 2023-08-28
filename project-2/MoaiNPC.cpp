@@ -12,11 +12,11 @@
 namespace JSH
 { 
     float MoaiNPC::mPlayTime = 0.0f;
+    float MoaiNPC::miTime = 0.0;
     map<int, MoaiNPC::eState> MoaiNPC::mPattern = {};
 
     MoaiNPC::MoaiNPC()
         : mState(eState::Idle)
-        , mFlag(false)
     {
     }
     MoaiNPC::~MoaiNPC()
@@ -36,29 +36,28 @@ namespace JSH
 
         //NPC Pressed
         JSHResourcemng::Load<Sound>(L"NPCWoo", L"..\\Resource\\sound\\Moai_Doo-Wop\\NPC_Woo.wav");
-        mn->CreateAnimationFolder(L"NPCPressed"
-            , L"..\\Resource\\Ingame\\Moai\\NPC\\NPC_Pressed", vector2::Zero, 0.05f);
+        mn->CreateAnimationFolder(L"NPCPressed", L"..\\Resource\\Ingame\\Moai\\NPC\\NPC_Pressed", vector2::Zero, 0.05f);
         mn->SetBmpRGB(L"NPCPressed", 255, 0, 255);
 
         //NPC KeyUp
         JSHResourcemng::Load<Sound>(L"NPCWop", L"..\\Resource\\sound\\Moai_Doo-Wop\\NPC_KeyUp.wav");
-        mn->CreateAnimationFolder(L"NPCKeyUp", L"..\\Resource\\Ingame\\Moai\\NPC\\NPC_KeyUp");
+        mn->CreateAnimationFolder(L"NPCKeyUp", L"..\\Resource\\Ingame\\Moai\\NPC\\NPC_KeyUp", vector2::Zero, 0.05f);
         mn->SetBmpRGB(L"NPCKeyUp", 255, 0, 255);
 
         //NPC Touch
         JSHResourcemng::Load<Sound>(L"NPCTap", L"..\\Resource\\sound\\Moai_Doo-Wop\\NPC_Tap.wav");
-        mn->CreateAnimationFolder(L"NPCTouch", L"..\\Resource\\Ingame\\Moai\\NPC\\NPC_Touch", vector2::Zero, 0.05f);
+        mn->CreateAnimationFolder(L"NPCTouch", L"..\\Resource\\Ingame\\Moai\\NPC\\NPC_Touch", vector2::Zero, 0.04f);
         mn->SetBmpRGB(L"NPCTouch", 255, 0, 255);
     }
     void MoaiNPC::Update()
     {
+        GameObject::Update();
+
         mPlayTime += Time::DeltaTime();
-        
-        if (mPlayTime >= 4.0f and mFlag == false)
-        {
-            Pattern();
-            mFlag = true;
-        }
+        miTime = floor(mPlayTime * 10) / 10;
+
+        Sound* sound = JSHResourcemng::Find<Sound>(L"NPCWoo");
+        Sound* sound1 = JSHResourcemng::Find<Sound>(L"NPCWop");
 
         switch (mState) 
         {
@@ -78,9 +77,23 @@ namespace JSH
             break;
         default:
             break;
-        }
+        }   
 
-        GameObject::Update();
+        if (miTime == 4.0f)
+        {
+            mState = eState::Pressed;
+            sound->Play(false);
+        }
+        if (miTime == 4.5f)
+        {
+            sound->Stop(true);
+            mState = eState::KeyUp;
+            sound1->Play(false);
+        }
+        if (miTime == 4.7f)
+        {
+            mState = eState::Idle;
+        }
     }
     void MoaiNPC::Render(HDC hdc)
     {
@@ -92,7 +105,7 @@ namespace JSH
         Animationmng* animationmng = GetComponent<Animationmng>();
         animationmng->FindAnimation(L"NPCIdle");
 
-        animationmng->PlayAnimation(L"NPCIdle", true);
+        animationmng->PlayAnimation(L"NPCIdle", false);
     }
 
     void MoaiNPC::Pressed()
@@ -100,16 +113,10 @@ namespace JSH
         Animationmng* animationmng = GetComponent<Animationmng>();
         animationmng->FindAnimation(L"NPCPressed");
         Sound* sound1 = JSHResourcemng::Find<Sound>(L"NPCWoo");
-        Sound* sound2 = JSHResourcemng::Find<Sound>(L"NPCWop");
+        Sound* sound = JSHResourcemng::Find<Sound>(L"NPCWop");
 
-        if (animationmng->IsActiveAnimationComplete() == true)
-        {
-            sound1->Stop(true);
-            animationmng->PlayAnimation(L"NPCKeyUp");
-            mState = eState::KeyUp;
-        }
-
-        sound1->Play(false);
+        //sound->Stop(true);
+        //sound1->Play(false);
         animationmng->PlayAnimation(L"NPCPressed");
     }
 
@@ -117,9 +124,11 @@ namespace JSH
     {
         Animationmng* animationmng = GetComponent<Animationmng>();
         Sound* sound = JSHResourcemng::Find<Sound>(L"NPCWop");
+        Sound* sound1 = JSHResourcemng::Find<Sound>(L"NPCWoo");
         animationmng->FindAnimation(L"NPCKeyUp");
 
-        sound->Play(false);
+        //sound1->Stop(true);
+        //sound->Play(false);
         animationmng->PlayAnimation(L"NPCKeyUp");
     }
 
@@ -131,11 +140,5 @@ namespace JSH
 
         sound->Play(false);
         animationmng->PlayAnimation(L"NPCTouch");
-    }
-
-    void MoaiNPC::Pattern()
-    {
-        mState = eState::Pressed;
-        mFlag = true;
     }
 }

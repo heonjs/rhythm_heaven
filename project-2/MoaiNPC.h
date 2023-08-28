@@ -27,12 +27,11 @@ namespace JSH
         void KeyUp();
         void Touch();
 
-        void Pattern();
-
     private:
         eState mState;
         static float mPlayTime;
-        bool mFlag;
+        static float miTime;
+        
 
         static map<int, eState> mPattern;
     };
