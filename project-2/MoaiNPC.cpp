@@ -139,7 +139,7 @@ namespace JSH
             Idle();
         }
 
-        // Pattern to Pattern Gap == 3.1f
+        // Pattern to Pattern Gap == 3.8f
 
         // Pattern 2
         if (miTime == 10.2f)
@@ -282,6 +282,62 @@ namespace JSH
         {
             Idle();
         }
+
+        // Pattern 5
+        if (miTime == 29.2f)
+        {
+            Pressed();
+        }
+        if (miTime == 29.6f)
+        {
+            KeyUp();
+        }
+        if (miTime == 29.8f)
+        {
+            Idle();
+        }
+        if (miTime == 30.0f)
+        {
+            Pressed();
+        }
+        if (miTime == 30.4f)
+        {
+            KeyUp();
+        }
+        if (miTime == 30.6f)
+        {
+            Idle();
+        }
+        if (miTime == 30.8f)
+        {
+            Pressed();
+        }
+        if (miTime == 31.2f)
+        {
+            KeyUp();
+        }
+        if (miTime == 31.4f)
+        {
+            Idle();
+        }
+        if (miTime == 31.8f)
+        {
+            Touch();
+        }
+        if (miTime == 31.9f)
+        {
+            Idle();
+        }
+        if (miTime == 31.95f)
+        {
+            Touch();
+        }
+        if (miTime == 32.1f)
+        {
+            Idle();
+        }
+
+        // Pattern 6
     }
     void MoaiNPC::Render(HDC hdc)
     {
