@@ -476,8 +476,160 @@ namespace JSH
         }
 
         // Pattern 9
+        if (miTime == 54.9f)
+        {
+            Touch();
+        }
+        if (miTime == 54.95f)
+        {
+            Idle();
+        }
+        if (miTime == 55.05f)
+        {
+            Touch();
+        }
+        if (miTime == 55.2f)
+        {
+            Idle();
+        }
+        if (miTime == 55.3f)
+        {
+            Pressed();
+        }
+        if (miTime == 55.7f)
+        {
+            KeyUp();
+        }
+        if (miTime == 55.9f)
+        {
+            Idle();
+        }
+        if (miTime == 56.5f)
+        {
+            Touch();
+        }
+        if (miTime == 56.55f)
+        {
+            Idle();
+        }
+        if (miTime == 56.65f)
+        {
+            Touch();
+        }
+        if (miTime == 56.8f)
+        {
+            Idle();
+        }
+        if (miTime == 56.9f)
+        {
+            Pressed();
+        }
+        if (miTime == 57.3f)
+        {
+            KeyUp();
+        }
+        if (miTime == 57.5f)
+        {
+            Idle();
+        }
 
+        // Pattern 10
+        if (miTime == 60.8f)
+        {
+            Pressed();
+        }
+        if (miTime == 61.6f)
+        {
+            KeyUp();
+        }
+        if (miTime == 61.8f)
+        {
+            Idle();
+        }
+        if (miTime == 62.4f)
+        {
+            Pressed();
+        }
+        if (miTime == 63.0f)
+        {
+            KeyUp();
+        }
+        if (miTime == 63.2f)
+        {
+            Idle();
+        }
 
+        // Pattern 11
+        if (miTime == 67.1f)
+        {
+            Pressed();
+        }
+        if (miTime == 67.9f)
+        {
+            KeyUp();
+        }
+        if (miTime == 68.1f)
+        {
+            Idle();
+        }
+        if (miTime == 68.7f)
+        {
+            Pressed();
+        }
+        if (miTime == 69.3f)
+        {
+            KeyUp();
+        }
+        if (miTime == 69.5f)
+        {
+            Idle();
+        }
+
+        // Pattern 12
+        if (miTime == 73.4f)
+        {
+            Pressed();
+        }
+        if (miTime == 74.6f)
+        {
+            KeyUp();
+        }
+        if (miTime == 74.8f)
+        {
+            Idle();
+        }
+        if (miTime == 75.0f)
+        {
+            Touch();
+        }
+        if (miTime == 75.2f)
+        {
+            Idle();
+        }
+        if (miTime == 75.4f)
+        {
+            Touch();
+        }
+        if (miTime == 75.6f)
+        {
+            Idle();
+        }
+        if (miTime == 75.8f)
+        {
+            Touch();
+        }
+        if (miTime == 76.0f)
+        {
+            Idle();
+        }
+        if (miTime == 76.2f)
+        {
+            Touch();
+        }
+        if (miTime == 76.4f)
+        {
+            Idle();
+        }
     }
     void MoaiNPC::Render(HDC hdc)
     {
