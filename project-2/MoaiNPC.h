@@ -29,9 +29,9 @@ namespace JSH
 
     private:
         eState mState;
+        eState mPrevState;
         static float mPlayTime;
         static float miTime;
-        
 
         static map<int, eState> mPattern;
     };

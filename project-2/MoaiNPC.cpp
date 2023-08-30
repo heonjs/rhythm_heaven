@@ -17,6 +17,7 @@ namespace JSH
 
     MoaiNPC::MoaiNPC()
         : mState(eState::Idle)
+        , mPrevState(eState::Idle)
     {
     }
     MoaiNPC::~MoaiNPC()
@@ -45,54 +46,241 @@ namespace JSH
         mn->SetBmpRGB(L"NPCKeyUp", 255, 0, 255);
 
         //NPC Touch
-        JSHResourcemng::Load<Sound>(L"NPCTap", L"..\\Resource\\sound\\Moai_Doo-Wop\\NPC_Tap.wav");
+        JSHResourcemng::Load<Sound>(L"NPCTap", L"..\\Resource\\sound\\Moai_Doo-Wop\\Moai_Tap.wav");
         mn->CreateAnimationFolder(L"NPCTouch", L"..\\Resource\\Ingame\\Moai\\NPC\\NPC_Touch", vector2::Zero, 0.04f);
         mn->SetBmpRGB(L"NPCTouch", 255, 0, 255);
+
+        mn->PlayAnimation(L"NPCIdle", true);
     }
     void MoaiNPC::Update()
     {
         GameObject::Update();
 
         mPlayTime += Time::DeltaTime();
-        miTime = floor(mPlayTime * 10) / 10;
+        miTime = floor(mPlayTime * 100) / 100;
 
-        Sound* sound = JSHResourcemng::Find<Sound>(L"NPCWoo");
-        Sound* sound1 = JSHResourcemng::Find<Sound>(L"NPCWop");
+        Sound* sound1 = JSHResourcemng::Find<Sound>(L"NPCWoo");
+        Sound* sound2 = JSHResourcemng::Find<Sound>(L"NPCWop");
+        Sound* sound3 = JSHResourcemng::Find<Sound>(L"NPCTouch");
 
-        switch (mState) 
+        //switch (mState) 
+        //{
+        //case JSH::MoaiNPC::eState::Idle:
+        //    Idle();
+        //    break;
+        //case JSH::MoaiNPC::eState::Pressed:
+        //    Pressed();
+        //    break;
+        //case JSH::MoaiNPC::eState::KeyUp:
+        //    KeyUp();
+        //    break;
+        //case JSH::MoaiNPC::eState::Touch:
+        //    Touch();
+        //    break;
+        //case JSH::MoaiNPC::eState::End:
+        //    break;
+        //default:
+        //    break;
+        //}        
+
+        // Pattern 1
+        if (miTime == 3.9f)
         {
-        case JSH::MoaiNPC::eState::Idle:
-            Idle();
-            break;
-        case JSH::MoaiNPC::eState::Pressed:
             Pressed();
-            break;
-        case JSH::MoaiNPC::eState::KeyUp:
-            KeyUp();
-            break;
-        case JSH::MoaiNPC::eState::Touch:
-            Touch();
-            break;
-        case JSH::MoaiNPC::eState::End:
-            break;
-        default:
-            break;
-        }   
 
-        if (miTime == 4.0f)
+            //if (mPrevState != eState::Pressed)
+            //{
+            //    Sound* sound1 = JSHResourcemng::Find<Sound>(L"NPCWoo");
+            //    sound1->Play(false);
+            //}
+        }
+        if (miTime == 4.3f)
         {
-            mState = eState::Pressed;
-            sound->Play(false);
+            KeyUp();
         }
         if (miTime == 4.5f)
         {
-            sound->Stop(true);
-            mState = eState::KeyUp;
-            sound1->Play(false);
+            Idle();
         }
         if (miTime == 4.7f)
         {
-            mState = eState::Idle;
+            Pressed();
+        }
+        if (miTime == 5.1f)
+        {
+            KeyUp();
+        }
+        if (miTime == 5.3f)
+        {
+            Idle();
+        }
+        if (miTime == 5.5f)
+        {
+            Pressed();
+        }
+        if (miTime == 5.9f)
+        {
+            KeyUp();
+        }
+        if (miTime == 6.1f)
+        {
+            Idle();
+        }
+        if (miTime == 6.3f)
+        {
+            Pressed();
+        }
+        if (miTime == 6.7f)
+        {
+            KeyUp();
+        }
+        if (miTime == 6.9f)
+        {
+            Idle();
+        }
+
+        // Pattern to Pattern Gap == 3.1f
+
+        // Pattern 2
+        if (miTime == 10.2f)
+        {
+            Pressed();
+        }
+        if (miTime == 10.6f)
+        {
+            KeyUp();
+        }
+        if (miTime == 10.8f)
+        {
+            Idle();
+        }
+        if (miTime == 11.0f)
+        {
+            Pressed();
+        }
+        if (miTime == 11.4f)
+        {
+            KeyUp();
+        }
+        if (miTime == 11.6f)
+        {
+            Idle();
+        }
+        if (miTime == 11.8f)
+        {
+            Pressed();
+        }
+        if (miTime == 12.2f)
+        {
+            KeyUp();
+        }
+        if (miTime == 12.4f)
+        {
+            Idle();
+        }
+        if (miTime == 12.6f)
+        {
+            Touch();
+        }
+        if (miTime == 13.0f)
+        {
+            Touch();
+        }
+        if (miTime == 13.4f)
+        {
+            Idle();
+        }
+
+        // Pattern 3
+        if (miTime == 16.5f)
+        {
+            Pressed();
+        }
+        if (miTime == 17.7f)
+        {
+            KeyUp();
+        }
+        if (miTime == 17.9f)
+        {
+            Idle();
+        }
+        if (miTime == 18.1f)
+        {
+            Touch();
+        }
+        if (miTime == 18.3f)
+        {
+            Idle();
+        }
+        if (miTime == 18.5f)
+        {
+            Touch();
+        }
+        if (miTime == 18.7f)
+        {
+            Idle();
+        }
+        if (miTime == 18.9f)
+        {
+            Touch();
+        }
+        if (miTime == 19.1f)
+        {
+            Idle();
+        }
+
+        // Pattern 4
+        if (miTime == 22.9f)
+        {
+            Pressed();
+        }
+        if (miTime == 23.3f)
+        {
+            KeyUp();
+        }
+        if (miTime == 23.5f)
+        {
+            Idle();
+        }
+        if (miTime == 23.7f)
+        {
+            Pressed();
+        }
+        if (miTime == 24.1f)
+        {
+            KeyUp();
+        }
+        if (miTime == 24.3f)
+        {
+            Idle();
+        }
+        if (miTime == 24.5f)
+        {
+            Pressed();
+        }
+        if (miTime == 24.9f)
+        {
+            KeyUp();
+        }
+        if (miTime == 25.1f)
+        {
+            Idle();
+        }
+        if (miTime == 25.5f)
+        {
+            Touch();
+        }
+        if (miTime == 25.55f)
+        {
+            Idle();
+        }
+        if (miTime == 26.6f)
+        {
+            Touch();
+        }
+        if (miTime == 26.8f)
+        {
+            Idle();
         }
     }
     void MoaiNPC::Render(HDC hdc)
@@ -106,18 +294,21 @@ namespace JSH
         animationmng->FindAnimation(L"NPCIdle");
 
         animationmng->PlayAnimation(L"NPCIdle", false);
-    }
 
+        mPrevState = eState::Idle;
+    }
     void MoaiNPC::Pressed()
     {
         Animationmng* animationmng = GetComponent<Animationmng>();
         animationmng->FindAnimation(L"NPCPressed");
         Sound* sound1 = JSHResourcemng::Find<Sound>(L"NPCWoo");
-        Sound* sound = JSHResourcemng::Find<Sound>(L"NPCWop");
+        //Sound* sound = JSHResourcemng::Find<Sound>(L"NPCWop");
 
         //sound->Stop(true);
-        //sound1->Play(false);
-        animationmng->PlayAnimation(L"NPCPressed");
+        sound1->Play(false);
+        animationmng->PlayAnimation(L"NPCPressed", false);
+
+        mPrevState = eState::Pressed;
     }
 
     void MoaiNPC::KeyUp()
@@ -127,9 +318,11 @@ namespace JSH
         Sound* sound1 = JSHResourcemng::Find<Sound>(L"NPCWoo");
         animationmng->FindAnimation(L"NPCKeyUp");
 
-        //sound1->Stop(true);
-        //sound->Play(false);
-        animationmng->PlayAnimation(L"NPCKeyUp");
+        sound1->Stop(true);     
+        animationmng->PlayAnimation(L"NPCKeyUp", false);
+        sound->Play(false);
+
+        mPrevState = eState::KeyUp;
     }
 
     void MoaiNPC::Touch()
@@ -139,6 +332,8 @@ namespace JSH
         animationmng->FindAnimation(L"NPCTouch");
 
         sound->Play(false);
-        animationmng->PlayAnimation(L"NPCTouch");
+        animationmng->PlayAnimation(L"NPCTouch", false);
+
+        mPrevState = eState::Touch;
     }
 }

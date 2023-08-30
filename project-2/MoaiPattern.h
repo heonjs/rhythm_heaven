@@ -9,6 +9,10 @@ namespace JSH
         MoaiPattern();
         virtual ~MoaiPattern();
 
+        virtual void Initialize();
+        virtual void Update();
+        virtual void Render(HDC hdc);
+
     private:
         static int mpTime;
     };

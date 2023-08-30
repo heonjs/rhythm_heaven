@@ -43,7 +43,7 @@ namespace JSH
         mp->SetBmpRGB(L"MoaiKeyUp", 255, 0, 255);
 
         //Moai Touch
-        JSHResourcemng::Load<Sound>(L"MoaiTap", L"..\\Resource\\sound\\Moai_Doo-Wop\\Moai_Tap.wav");
+        JSHResourcemng::Load<Sound>(L"MoaiTap", L"..\\Resource\\sound\\Moai_Doo-Wop\\NPC_Tap.wav");
         mp->CreateAnimationFolder(L"MoaiTouch", L"..\\Resource\\Ingame\\Moai\\Player\\Moai_Touch", vector2::Zero, 0.04f);
         mp->SetBmpRGB(L"MoaiTouch", 255, 0, 255);
 
