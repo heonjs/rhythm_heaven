@@ -139,7 +139,7 @@ namespace JSH
             Idle();
         }
 
-        // Pattern to Pattern Gap == 3.8f
+        // Pattern to Pattern Gap == 3.4f
 
         // Pattern 2
         if (miTime == 10.2f)
@@ -374,6 +374,109 @@ namespace JSH
         {
             Idle();
         }
+
+        //Pattern 7
+        if (miTime == 42.3f)
+        {
+            Touch();
+        }
+        if (miTime == 42.35f)
+        {
+            Idle();
+        }
+        if (miTime == 42.45f)
+        {
+            Touch();
+        }
+        if (miTime == 42.6f)
+        {
+            Idle();
+        }
+        if (miTime == 43.0f)
+        {
+            Touch();
+        }
+        if (miTime == 43.2f)
+        {
+            Idle();
+        }
+        if (miTime == 43.8f)
+        {
+            Touch();
+        }
+        if (miTime == 43.85f)
+        {
+            Idle();
+        }
+        if (miTime == 43.95f)
+        {
+            Touch();
+        }
+        if (miTime == 44.1f)
+        {
+            Idle();
+        }
+        if (miTime == 44.6f)
+        {
+            Touch();
+        }
+        if (miTime == 44.7f)
+        {
+            Idle();
+        }
+
+        //Pattern 8
+        if (miTime == 48.6f)
+        {
+            Touch();
+        }
+        if (miTime == 48.65f)
+        {
+            Idle();
+        }
+        if (miTime == 48.75f)
+        {
+            Touch();
+        }
+        if (miTime == 48.9f)
+        {
+            Idle();
+        }
+        if (miTime == 49.3f)
+        {
+            Touch();
+        }
+        if (miTime == 49.5f)
+        {
+            Idle();
+        }
+        if (miTime == 50.2f)
+        {
+            Touch();
+        }
+        if (miTime == 50.25f)
+        {
+            Idle();
+        }
+        if (miTime == 50.35f)
+        {
+            Touch();
+        }
+        if (miTime == 50.5f)
+        {
+            Idle();
+        }
+        if (miTime == 51.0f)
+        {
+            Touch();
+        }
+        if (miTime == 51.1f)
+        {
+            Idle();
+        }
+
+        // Pattern 9
+
 
     }
     void MoaiNPC::Render(HDC hdc)
