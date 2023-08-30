@@ -270,15 +270,15 @@ namespace JSH
         {
             Touch();
         }
-        if (miTime == 25.55f)
+        if (miTime == 25.6f)
         {
             Idle();
         }
-        if (miTime == 26.6f)
+        if (miTime == 25.65f)
         {
             Touch();
         }
-        if (miTime == 26.8f)
+        if (miTime == 25.8f)
         {
             Idle();
         }
