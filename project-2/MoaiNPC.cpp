@@ -338,6 +338,43 @@ namespace JSH
         }
 
         // Pattern 6
+        if (miTime == 35.5f)
+        {
+            Pressed();
+        }
+        if (miTime == 36.7f)
+        {
+            KeyUp();
+        }
+        if (miTime == 36.9f)
+        {
+            Idle();
+        }
+        if (miTime == 37.1f)
+        {
+            Touch();
+        }
+        if (miTime == 37.3f)
+        {
+            Idle();
+        }
+        if (miTime == 37.5f)
+        {
+            Touch();
+        }
+        if (miTime == 37.7f)
+        {
+            Idle();
+        }
+        if (miTime == 37.9f)
+        {
+            Touch();
+        }
+        if (miTime == 38.1f)
+        {
+            Idle();
+        }
+
     }
     void MoaiNPC::Render(HDC hdc)
     {
