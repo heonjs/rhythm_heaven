@@ -13,11 +13,9 @@ namespace JSH
 { 
     float MoaiNPC::mPlayTime = 0.0f;
     float MoaiNPC::miTime = 0.0;
-    map<int, MoaiNPC::eState> MoaiNPC::mPattern = {};
 
     MoaiNPC::MoaiNPC()
         : mState(eState::Idle)
-        , mPrevState(eState::Idle)
     {
     }
     MoaiNPC::~MoaiNPC()
@@ -642,8 +640,6 @@ namespace JSH
         animationmng->FindAnimation(L"NPCIdle");
 
         animationmng->PlayAnimation(L"NPCIdle", false);
-
-        mPrevState = eState::Idle;
     }
     void MoaiNPC::Pressed()
     {
@@ -655,8 +651,6 @@ namespace JSH
         //sound->Stop(true);
         sound1->Play(false);
         animationmng->PlayAnimation(L"NPCPressed", false);
-
-        mPrevState = eState::Pressed;
     }
 
     void MoaiNPC::KeyUp()
@@ -669,8 +663,6 @@ namespace JSH
         sound1->Stop(true);     
         animationmng->PlayAnimation(L"NPCKeyUp", false);
         sound->Play(false);
-
-        mPrevState = eState::KeyUp;
     }
 
     void MoaiNPC::Touch()
@@ -681,7 +673,5 @@ namespace JSH
 
         sound->Play(false);
         animationmng->PlayAnimation(L"NPCTouch", false);
-
-        mPrevState = eState::Touch;
     }
 }

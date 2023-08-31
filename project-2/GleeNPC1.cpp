@@ -67,22 +67,37 @@ namespace JSH
     void GleeNPC1::Idle()
     {
         Animationmng* animationmng = GetComponent<Animationmng>();
+        animationmng->FindAnimation(L"Gleeidle");
+
+        animationmng->PlayAnimation(L"Gleeidle", true);
     }
     void GleeNPC1::Touch()
     {
         Animationmng* animationmng = GetComponent<Animationmng>();
+        animationmng->FindAnimation(L"Gleenormal");
+
+        animationmng->PlayAnimation(L"Gleenormal", true);
     }
     void GleeNPC1::Closing()
     {
         Animationmng* animationmng = GetComponent<Animationmng>();
+        animationmng->FindAnimation(L"Gleeclose");
+
+        animationmng->PlayAnimation(L"Gleeclose", false);
     }
     void GleeNPC1::Opening()
     {
         Animationmng* animationmng = GetComponent<Animationmng>();
+        animationmng->FindAnimation(L"Gleeopen");
+
+        animationmng->PlayAnimation(L"Gleeopen", false);
     }
     void GleeNPC1::AH()
     {
         Animationmng* animationmng = GetComponent<Animationmng>();
+        animationmng->FindAnimation(L"GleeAH");
+
+        animationmng->PlayAnimation(L"GleeAH", false);
     }
     void GleeNPC1::Success()
     {
