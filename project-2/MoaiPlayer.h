@@ -31,6 +31,10 @@ namespace JSH
         {
             return mScore;
         }
+        static void SetScore(int score)
+        {
+            mScore = score;
+        }
 
     private:
         eState mState;

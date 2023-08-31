@@ -98,5 +98,8 @@ namespace JSH
         sound1->Stop(true);
         sound2->Stop(true);
         sound3->Stop(true);
+
+        //Ending Scene을 나가면 점수 초기화
+        MoaiPlayer::SetScore(0);
     }
 }
