@@ -16,14 +16,7 @@ namespace JSH
         virtual void Enter();
         virtual void Exit();
 
-        static float GetScore()
-        {
-            return mScore;
-        }
-
     private:
         static float mPlayTime;
-
-        static float mScore;
     };
 }

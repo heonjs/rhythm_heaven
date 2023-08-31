@@ -4,6 +4,7 @@
 #include "Transform.h"
 #include "JSHResourcemng.h"
 #include "Moai.h"
+#include "MoaiPlayer.h"
 
 namespace JSH
 {
@@ -38,15 +39,15 @@ namespace JSH
 
         Animationmng* animationmng = GetComponent<Animationmng>();
 
-        if (Moai::GetScore() >= 100.0f)
+        if (MoaiPlayer::GetScore() >= 50)
         {
             animationmng->PlayAnimation(L"MoaiPerfect");
         }
-        else if (Moai::GetScore() < 100.0f and Moai::GetScore() >= 30.0f)
+        else if (MoaiPlayer::GetScore() < 50 and MoaiPlayer::GetScore() >= 20)
         {
             animationmng->PlayAnimation(L"MoaiOK");
         }
-        else if (Moai::GetScore() < 30.0f)
+        else if (MoaiPlayer::GetScore() < 20)
         {
             animationmng->PlayAnimation(L"MoaiBad");
         }

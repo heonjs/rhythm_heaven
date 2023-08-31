@@ -12,6 +12,7 @@
 #include "Sound.h"
 #include "Moai.h"
 #include "MoaiEndImage.h"
+#include "MoaiPlayer.h"
 
 namespace JSH
 {
@@ -75,15 +76,15 @@ namespace JSH
         Sound* sound2 = JSHResourcemng::Find<Sound>(L"MoaiOK_S");
         Sound* sound3 = JSHResourcemng::Find<Sound>(L"MoaiBad_S");
 
-        if (Moai::GetScore() >= 100.0f)
+        if (MoaiPlayer::GetScore() >= 100.0f)
         {
             sound1->Play(false);
         }
-        else if (Moai::GetScore() < 100.0f and Moai::GetScore() >= 30.0f)
+        else if (MoaiPlayer::GetScore() < 100.0f and MoaiPlayer::GetScore() >= 30.0f)
         {
             sound2->Play(false);
         }
-        else if (Moai::GetScore() < 30.0f)
+        else if (MoaiPlayer::GetScore() < 30.0f)
         {
             sound3->Play(false);
         }

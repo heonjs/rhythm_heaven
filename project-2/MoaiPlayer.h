@@ -27,8 +27,14 @@ namespace JSH
         void KeyUp();
         void Touch();
 
+        static int GetScore()
+        {
+            return mScore;
+        }
+
     private:
         eState mState;
         static float mTime;
+        static int mScore;
     };
 }

@@ -17,7 +17,6 @@
 namespace JSH
 {
     float Moai::mPlayTime = 0.0f;
-    float Moai::mScore = 0.0f;
 
     Moai::Moai()
     {

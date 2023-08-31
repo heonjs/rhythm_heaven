@@ -11,6 +11,7 @@
 namespace JSH
 {
     float MoaiPlayer::mTime = 0.0f;
+    int MoaiPlayer::mScore = 0;
 
     MoaiPlayer::MoaiPlayer()
         : mState(eState::Idle)
@@ -80,7 +81,6 @@ namespace JSH
 
     void MoaiPlayer::Idle()
     {
-
         Animationmng* animationmng = GetComponent<Animationmng>();
         Sound* sound1 = JSHResourcemng::Find<Sound>(L"MoaiWoo");
         Sound* sound2 = JSHResourcemng::Find<Sound>(L"MoaiTap");
@@ -93,8 +93,9 @@ namespace JSH
             {
                 sound1->Play(false);
                 animationmng->PlayAnimation(L"MoaiPressed", false);
-                mState = eState::Pressed;
-                mTime = 0.0f;
+                mScore += 1;
+                mState = eState::Pressed; 
+                mTime = 0.0f;                
             }
         }
         
@@ -104,6 +105,7 @@ namespace JSH
             {
                 sound2->Play(false);
                 animationmng->PlayAnimation(L"MoaiTouch", false);
+                mScore += 1;
                 mState = eState::Touch;
                 mTime = 0.0f;
             }
@@ -124,6 +126,7 @@ namespace JSH
             sound1->Stop(false);
             sound2->Play(false);
             animationmng->PlayAnimation(L"MoaiKeyUp", false);
+            mScore += 1;
             mState = eState::KeyUp;
         }
     }
