@@ -58,5 +58,7 @@ namespace JSH
 
         UINT mCollisionNumber;
         bool mbIsCollision;
+
+        static bool mColTrigger;
     };
 }

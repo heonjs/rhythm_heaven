@@ -27,6 +27,9 @@ namespace JSH
         Animationmng* animationmng = AddComponent<Animationmng>();
         animationmng->SetScale(vector2(2.0f, 2.0f));
 
+        Sound* sound1 = JSHResourcemng::Load<Sound>(L"Peck_Your_beak", L"..\\Resource\\\sound\\Blue_Birds\\SE_BIRD_TUTUITE.wav");
+        Sound* sound2 = JSHResourcemng::Load<Sound>(L"Stretch", L"..\\Resource\\\sound\\Blue_Birds\\SE_BIRD_FUNZORU.wav");
+
         //Captain Idle
         Texture* Captain_Idle = JSHResourcemng::Load<Texture>(L"Captain_Idle", L"..\\Resource\\Ingame\\Blue_Bird\\Cpt_Normal.bmp");
         animationmng->CreateAnimation(L"Captain_Idle", Captain_Idle, vector2(0.0f, 0.0f), vector2(62.0f, 80.0f), 3, vector2::Zero, 0.15f);

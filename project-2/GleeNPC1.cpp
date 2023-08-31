@@ -6,6 +6,7 @@
 #include "JSHResourcemng.h"
 #include "Object.h"
 #include "Texture.h"
+#include "Sound.h"
 
 namespace JSH
 {
@@ -24,20 +25,17 @@ namespace JSH
         gn1->SetScale(vector2(2.0f, 2.0f));
 
         //Glee Idle
-        Texture* Gleeidle = JSHResourcemng::Load<Texture>(L"Gleeidle"
-            , L"..\\Resource\\Ingame\\Glee_Club\\Glee_Idle.bmp");
+        Texture* Gleeidle = JSHResourcemng::Load<Texture>(L"Gleeidle", L"..\\Resource\\Ingame\\Glee_Club\\Glee_Idle.bmp");
         gn1->CreateAnimation(L"Gleeidle", Gleeidle, vector2(0.0f, 0.0f), vector2(48.0f, 72.0f), 3);
         gn1->SetBmpRGB(L"Gleeidle", 151, 151, 151);
 
         //Glee normal
-        Texture* Gleetouch = JSHResourcemng::Load<Texture>(L"Gleenormal"
-            , L"..\\Resource\\Ingame\\Glee_Club\\Glee_normal.bmp");
+        Texture* Gleetouch = JSHResourcemng::Load<Texture>(L"Gleenormal", L"..\\Resource\\Ingame\\Glee_Club\\Glee_normal.bmp");
         gn1->CreateAnimation(L"Gleenormal", Gleetouch, vector2(0.0f, 0.0f), vector2(47.0f, 73.0f), 2);
         gn1->SetBmpRGB(L"Gleenormal", 151, 151, 151);
 
         //Glee Close Mouth
-        Texture* Gleeclose = JSHResourcemng::Load<Texture>(L"Gleeclose"
-            , L"..\\Resource\\Ingame\\Glee_Club\\Glee_Close.bmp");
+        Texture* Gleeclose = JSHResourcemng::Load<Texture>(L"Gleeclose", L"..\\Resource\\Ingame\\Glee_Club\\Glee_Close.bmp");
         gn1->CreateAnimation(L"Gleeclose", Gleeclose, vector2(0.0f, 0.0f), vector2(48.0f, 72.0f), 3, vector2(0.0f, 0.0f), 0.05f);
         gn1->SetBmpRGB(L"Gleeclose", 151, 151, 151);
 

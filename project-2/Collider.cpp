@@ -1,10 +1,12 @@
 #include "Collider.h"
 #include "Transform.h"
 #include "GameObject.h"
+#include "JSHinput.h"
 
 namespace JSH
 {
     UINT Collider::mCollisionCount = 0;
+    bool Collider::mColTrigger = false;
 
     Collider::Collider()
         : Component(eComponentType::Collider)
@@ -24,6 +26,14 @@ namespace JSH
     }
     void Collider::Update()
     {
+        if (input::GetKeyDown(eKeyCode::P))
+        {
+            mColTrigger = true;
+        }
+        if (input::GetKeyDown(eKeyCode::M))
+        {
+            mColTrigger = false;
+        }
     }
     void Collider::Render(HDC hdc)
     {
@@ -51,8 +61,11 @@ namespace JSH
 
         HPEN OldPen = (HPEN)SelectObject(hdc, pen);
 
-        Rectangle(hdc, pos.x, pos.y
-            , pos.x + mSize.x, pos.y + mSize.y);
+        if (mColTrigger == true)
+        {
+            Rectangle(hdc, pos.x, pos.y
+                , pos.x + mSize.x, pos.y + mSize.y);
+        }
 
         SelectObject(hdc, OldBrush);
         DeleteObject(TransParentBrush);
