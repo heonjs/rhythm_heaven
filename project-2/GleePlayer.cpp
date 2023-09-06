@@ -92,7 +92,7 @@ namespace JSH
 
         if (input::GetKey(eKeyCode::Lbutton))
         {
-            sound->Stop(false);
+            sound->Stop(true);
             animationmng->PlayAnimation(L"GleeClose", false);
             mState = eState::Closing;
         } 
@@ -100,11 +100,12 @@ namespace JSH
     void GleePlayer::Closing()
     {
         Animationmng* animationmng = GetComponent<Animationmng>();
-        Sound* sound = JSHResourcemng::Find<Sound>(L"Glee_Idle_S");
+        Sound* sound = JSHResourcemng::Find<Sound>(L"Glee_KeyUp_S");
 
         if (input::GetKeyUp(eKeyCode::Lbutton))
         {
             animationmng->PlayAnimation(L"GleeIdle", true);
+            sound->Play(true);
             mState = eState::Idle;
         }
 
@@ -117,7 +118,7 @@ namespace JSH
     void GleePlayer::Opening()
     {
         Animationmng* animationmng = GetComponent<Animationmng>();
-        Sound* sound = JSHResourcemng::Find<Sound>(L"Glee_Idle_S");
+        Sound* sound = JSHResourcemng::Find<Sound>(L"Glee_KeyUp_S");
 
         if (animationmng->IsActiveAnimationComplete() == true)
         {
@@ -126,8 +127,9 @@ namespace JSH
         }
 
         if (input::GetKeyDown(eKeyCode::Lbutton))
-        {
+        {          
             animationmng->PlayAnimation(L"GleeClose", false);
+            sound->Stop(true);
             mState = eState::Closing;
         }
     }

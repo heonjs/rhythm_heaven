@@ -12,6 +12,7 @@
 #include "GleePlayer.h"
 #include "GleeNPC1.h"
 #include "GleeNPC2.h"
+#include "GleeTeacher.h"
 #include "Sound.h"
 
 namespace JSH
@@ -49,17 +50,10 @@ namespace JSH
         dj2sr->SetTexture(texture2);
         dj2sr->SetScale(vector2(2.0f, 2.25f));
 
-        //Teacher
-        Texture* teacher = JSHResourcemng::Load<Texture>(L"Teacher"
-            , L"..\\Resource\\Ingame\\Glee_Club\\Glee_Teacher.bmp");
-        BackGround* tc = object::Instantiate<BackGround>(eLayerType::NPC1);
-        Animationmng* tcA = tc->AddComponent<Animationmng>();
-        Transform* tctr = tc->GetComponent<Transform>();
-        tcA->CreateAnimation(L"Teacher", teacher, vector2(0.0f, 0.0f), vector2(72.0f, 98.0f), 3);
-        tctr->SetPosition(vector2(100.0f, 450.0f));
-        tcA->SetBmpRGB(L"Teacher", 151, 151, 151);
-        tcA->SetScale(vector2(2.0f, 2.0f));
-        tcA->PlayAnimation(L"Teacher", true);
+        //Glee Teacher
+        GleeTeacher* gt = object::Instantiate<GleeTeacher>(eLayerType::FrontObject);
+        Transform* gttr = gt->GetComponent<Transform>();
+        gttr->SetPosition(vector2(100.0f, 450.0f));
 
         //Glee NPC1
         GleeNPC1* gn1 = object::Instantiate<GleeNPC1>(eLayerType::NPC1);

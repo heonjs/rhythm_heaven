@@ -11,7 +11,6 @@
 namespace JSH
 {
     GleeNPC1::GleeNPC1()
-        : mState(eState::Idle)
     {
     }
     GleeNPC1::~GleeNPC1()
@@ -23,6 +22,9 @@ namespace JSH
 
         Animationmng* gn1 = AddComponent<Animationmng>();
         gn1->SetScale(vector2(2.0f, 2.0f));
+
+        //Glee NPC2 Sound
+        JSHResourcemng::Load<Sound>(L"NPC1_Idle", L"..\\Resource\\sound\\Glee_Club\\NPC_1_Idle.wav");
 
         //Glee Idle
         Texture* Gleeidle = JSHResourcemng::Load<Texture>(L"Gleeidle", L"..\\Resource\\Ingame\\Glee_Club\\Glee_Idle.bmp");
@@ -98,10 +100,6 @@ namespace JSH
         animationmng->FindAnimation(L"GleeAH");
 
         animationmng->PlayAnimation(L"GleeAH", false);
-    }
-    void GleeNPC1::Success()
-    {
-        Animationmng* animationmng = GetComponent<Animationmng>();
     }
     void GleeNPC1::Fail()
     {

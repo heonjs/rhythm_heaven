@@ -161,6 +161,7 @@
     <ClInclude Include="GleeNPC1.h" />
     <ClInclude Include="GleeNPC2.h" />
     <ClInclude Include="GleePlayer.h" />
+    <ClInclude Include="GleeTeacher.h" />
     <ClInclude Include="Icon.h" />
     <ClInclude Include="Moai.h" />
     <ClInclude Include="MoaiEnd.h" />
@@ -227,6 +228,7 @@
     <ClCompile Include="GleeNPC1.cpp" />
     <ClCompile Include="GleeNPC2.cpp" />
     <ClCompile Include="GleePlayer.cpp" />
+    <ClCompile Include="GleeTeacher.cpp" />
     <ClCompile Include="Icon.cpp" />
     <ClCompile Include="Moai.cpp" />
     <ClCompile Include="MoaiEnd.cpp" />

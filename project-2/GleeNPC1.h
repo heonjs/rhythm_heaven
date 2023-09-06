@@ -6,18 +6,6 @@ namespace JSH
     class GleeNPC1 : public GameObject
     {
     public:
-        enum class eState
-        {
-            Idle,
-            Touch,
-            Closing,
-            Opening,
-            AH,
-            Success,
-            Fail,
-            End
-        };
-
         GleeNPC1();
         virtual ~GleeNPC1();
 
@@ -30,10 +18,9 @@ namespace JSH
         void Closing();
         void Opening();
         void AH();
-        void Success();
         void Fail();
 
     private:
-        eState mState;
+
     };
 }

@@ -351,6 +351,9 @@
     <ClInclude Include="BBMemories.h">
       <Filter>Contents\BlueBirds\BBMemories</Filter>
     </ClInclude>
+    <ClInclude Include="GleeTeacher.h">
+      <Filter>Contents\GleeClub\GleeNPC</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="rhythm_heaven.cpp">
@@ -532,6 +535,9 @@
     </ClCompile>
     <ClCompile Include="BBMemories.cpp">
       <Filter>Contents\BlueBirds\BBMemories</Filter>
+    </ClCompile>
+    <ClCompile Include="GleeTeacher.cpp">
+      <Filter>Contents\GleeClub\GleeNPC</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
