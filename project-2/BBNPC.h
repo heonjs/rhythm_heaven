@@ -6,15 +6,6 @@ namespace JSH
     class BBNPC : public GameObject
     {
     public:
-        enum class eState
-        {
-            Idle,
-            Hit,
-            Squat,
-            Stretch,
-            End
-
-        };
         BBNPC();
         virtual ~BBNPC();
 
@@ -28,6 +19,7 @@ namespace JSH
         void Stretch();
 
     private:
-        eState mState;
+        static float mPlayTime;
+        static float miTime;
     };
 }

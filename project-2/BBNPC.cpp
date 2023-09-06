@@ -10,8 +10,10 @@
 
 namespace JSH
 {
+    float BBNPC::mPlayTime = 0.0f;
+    float BBNPC::miTime = 0.0f;
+
     BBNPC::BBNPC()
-        : mState(eState::Idle)
     {
     }
     BBNPC::~BBNPC()
@@ -34,27 +36,10 @@ namespace JSH
     }
     void BBNPC::Update()
     {
-        switch (mState)
-        {
-        case JSH::BBNPC::eState::Idle:
-            Idle();
-            break;
-        case JSH::BBNPC::eState::Hit:
-            Hit();
-            break;
-        case JSH::BBNPC::eState::Squat:
-            Squat();
-            break;
-        case JSH::BBNPC::eState::Stretch:
-            Stretch();
-            break;
-        case JSH::BBNPC::eState::End:
-            break;
-        default:
-            break;
-        }
-
         GameObject::Update();
+
+        mPlayTime += Time::DeltaTime();
+        miTime = floor(mPlayTime * 100) / 100;
     }
     void BBNPC::Render(HDC hdc)
     {

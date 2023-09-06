@@ -21,6 +21,7 @@ namespace JSH
         void Fail();
 
     private:
-
+        static float mPlayTime;
+        static float miTime;
     };
 }

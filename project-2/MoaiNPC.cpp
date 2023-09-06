@@ -61,36 +61,10 @@ namespace JSH
         Sound* sound2 = JSHResourcemng::Find<Sound>(L"NPCWop");
         Sound* sound3 = JSHResourcemng::Find<Sound>(L"NPCTouch");
 
-        //switch (mState) 
-        //{
-        //case JSH::MoaiNPC::eState::Idle:
-        //    Idle();
-        //    break;
-        //case JSH::MoaiNPC::eState::Pressed:
-        //    Pressed();
-        //    break;
-        //case JSH::MoaiNPC::eState::KeyUp:
-        //    KeyUp();
-        //    break;
-        //case JSH::MoaiNPC::eState::Touch:
-        //    Touch();
-        //    break;
-        //case JSH::MoaiNPC::eState::End:
-        //    break;
-        //default:
-        //    break;
-        //}        
-
         // Pattern 1
         if (miTime == 3.9f)
         {
             Pressed();
-
-            //if (mPrevState != eState::Pressed)
-            //{
-            //    Sound* sound1 = JSHResourcemng::Find<Sound>(L"NPCWoo");
-            //    sound1->Play(false);
-            //}
         }
         if (miTime == 4.3f)
         {

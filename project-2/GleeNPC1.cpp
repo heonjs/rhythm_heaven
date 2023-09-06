@@ -10,6 +10,9 @@
 
 namespace JSH
 {
+    float GleeNPC1::mPlayTime = 0.0f;
+    float GleeNPC1::miTime = 0.0f;
+
     GleeNPC1::GleeNPC1()
     {
     }
@@ -25,6 +28,9 @@ namespace JSH
 
         //Glee NPC2 Sound
         JSHResourcemng::Load<Sound>(L"NPC1_Idle", L"..\\Resource\\sound\\Glee_Club\\NPC_1_Idle.wav");
+
+        //NPC1 AH Sound
+        JSHResourcemng::Load<Sound>(L"NPC1_AH", L"..\\Resource\\sound\\Glee_Club\\Glee_AH.wav");
 
         //Glee Idle
         Texture* Gleeidle = JSHResourcemng::Load<Texture>(L"Gleeidle", L"..\\Resource\\Ingame\\Glee_Club\\Glee_Idle.bmp");
@@ -60,6 +66,9 @@ namespace JSH
     void GleeNPC1::Update()
     {
         GameObject::Update();
+
+        mPlayTime += Time::DeltaTime();
+        miTime = floor(mPlayTime * 100) / 100;
     }
     void GleeNPC1::Render(HDC hdc)
     {
@@ -70,8 +79,10 @@ namespace JSH
     {
         Animationmng* animationmng = GetComponent<Animationmng>();
         animationmng->FindAnimation(L"Gleeidle");
+        Sound* sound = JSHResourcemng::Find<Sound>(L"NPC1_Idle");
 
         animationmng->PlayAnimation(L"Gleeidle", true);
+        sound->Play(false);
     }
     void GleeNPC1::Touch()
     {
@@ -84,8 +95,10 @@ namespace JSH
     {
         Animationmng* animationmng = GetComponent<Animationmng>();
         animationmng->FindAnimation(L"Gleeclose");
+        Sound* sound = JSHResourcemng::Find<Sound>(L"NPC1_Idle");
 
         animationmng->PlayAnimation(L"Gleeclose", false);
+        sound->Stop(true);
     }
     void GleeNPC1::Opening()
     {
@@ -98,8 +111,10 @@ namespace JSH
     {
         Animationmng* animationmng = GetComponent<Animationmng>();
         animationmng->FindAnimation(L"GleeAH");
+        Sound* sound = JSHResourcemng::Find<Sound>(L"NPC1_AH");
 
         animationmng->PlayAnimation(L"GleeAH", false);
+        sound->Play(false);
     }
     void GleeNPC1::Fail()
     {
