@@ -10,6 +10,9 @@
 
 namespace JSH
 {
+    float BBPlayer::mTime = 0.0f;
+    int BBPlayer::mScore = 0;
+
     BBPlayer::BBPlayer()
         :mState(eState::Idle)
     {
@@ -39,6 +42,8 @@ namespace JSH
     }
     void BBPlayer::Update()
     {
+        GameObject::Update();
+
         switch (mState)
         {
         case JSH::BBPlayer::eState::Idle:
@@ -57,9 +62,7 @@ namespace JSH
             break;
         default:
             break;
-        }
-
-        GameObject::Update();
+        }  
     }
     void BBPlayer::Render(HDC hdc)
     {
@@ -73,11 +76,32 @@ namespace JSH
 
         Sound* sound = JSHResourcemng::Find<Sound>(L"BB_Peck_S");
 
-        if (input::GetKeyDown(eKeyCode::Lbutton))
+        if (input::GetKey(eKeyCode::Lbutton))
         {
-            sound->SetPosition(0.2f, false);
-            animationmng->PlayAnimation(L"BB_Peck", false);
-            mState = eState::Hit;
+            mTime += Time::DeltaTime();
+
+            if (mTime >= 0.07f)
+            {
+                sound->SetPosition(0.2f, false);
+                animationmng->PlayAnimation(L"BB_Peck", false);
+                mState = eState::Squat;
+            }
+        }
+
+        if (input::GetKeyUp(eKeyCode::Lbutton))
+        {
+            if (mTime <= 0.07f)
+            {
+                sound->Play(false);
+                animationmng->PlayAnimation(L"BB_Peck", false);
+                mScore += 1;
+                mState = eState::Hit;
+                mTime = 0.0f;
+            }
+            else if (mTime > 0.07f)
+            {
+                mTime = 0.0f;
+            }
         }
     }
     void BBPlayer::Hit()

@@ -106,9 +106,6 @@
     <Filter Include="Contents\BlueBirds\BBPlayer">
       <UniqueIdentifier>{fd37a7e0-adf3-4226-876a-34dd3d2c5afb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Contents\BlueBirds\BBNPC">
-      <UniqueIdentifier>{b860134e-4230-44ac-8ff9-da5d153df65d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\JSHResource\Sound">
       <UniqueIdentifier>{b8f84600-1c57-46c0-9d9e-a43bdb946ef3}</UniqueIdentifier>
     </Filter>
@@ -153,6 +150,9 @@
     </Filter>
     <Filter Include="Contents\BlueBirds\BBMemories">
       <UniqueIdentifier>{cd5d0497-a10e-4484-80c0-711a184610e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Contents\BlueBirds\BBNPC">
+      <UniqueIdentifier>{b860134e-4230-44ac-8ff9-da5d153df65d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

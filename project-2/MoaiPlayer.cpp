@@ -89,7 +89,7 @@ namespace JSH
         {
             mTime += Time::DeltaTime();
 
-            if (mTime >= 0.08f)
+            if (mTime >= 0.07f)
             {
                 sound1->Play(false);
                 animationmng->PlayAnimation(L"MoaiPressed", false);
