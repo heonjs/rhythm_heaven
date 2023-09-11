@@ -13,7 +13,10 @@ namespace JSH
         virtual void Update();
         virtual void Render(HDC hdc);
 
-    private:
+        void Together();
 
+    private:
+        static float mPlayTime;
+        static float miTime;
     };
 }

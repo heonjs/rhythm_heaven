@@ -10,6 +10,9 @@
 
 namespace JSH
 {
+    float GleeTeacher::mPlayTime = 0.0f;
+    float GleeTeacher::miTime = 0.0f;
+
     GleeTeacher::GleeTeacher()
     {
     }
@@ -36,9 +39,23 @@ namespace JSH
     void GleeTeacher::Update()
     {
         GameObject::Update();
+
+        mPlayTime += Time::DeltaTime();
+        miTime = floor(mPlayTime * 100) / 100;
+
+        if (miTime == 22.5f)
+        {
+            Together();
+        }
     }
     void GleeTeacher::Render(HDC hdc)
     {
         GameObject::Render(hdc);
+    }
+    void GleeTeacher::Together()
+    {
+        Sound* sound = JSHResourcemng::Find<Sound>(L"TGN");
+
+        sound->Play(false);
     }
 }

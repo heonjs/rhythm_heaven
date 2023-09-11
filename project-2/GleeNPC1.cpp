@@ -52,8 +52,8 @@ namespace JSH
         gn1->SetBmpRGB(L"Gleeopen", 151, 151, 151);
 
         //Glee AH
-        Texture* GleeAH = JSHResourcemng::Load<Texture>(L"GleeAH", L"..\\Resource\\Ingame\\Glee_Club\\Glee_Close.bmp");
-        gn1->CreateAnimation(L"GleeAH", GleeAH, vector2(0.0f, 0.0f), vector2(48.0f, 72.0f), 3);
+        Texture* GleeAH = JSHResourcemng::Load<Texture>(L"GleeAH", L"..\\Resource\\Ingame\\Glee_Club\\Glee_AH.bmp");
+        gn1->CreateAnimation(L"GleeAH", GleeAH, vector2(0.0f, 0.0f), vector2(52.5f, 82.0f), 8, vector2::Zero, 0.05f);
         gn1->SetBmpRGB(L"GleeAH", 151, 151, 151);
 
         //Glee Fail
@@ -69,6 +69,104 @@ namespace JSH
 
         mPlayTime += Time::DeltaTime();
         miTime = floor(mPlayTime * 100) / 100;
+
+        //Pattern 1
+        if (miTime == 12.5f)
+        {
+            Opening();
+        }
+        if (miTime == 12.6f)
+        {
+            Idle();
+        }
+        if (miTime == 13.2f)
+        {
+            Closing();
+        }
+        if (miTime == 13.3f)
+        {
+            Touch();
+        }
+
+        //Pattern 2
+        if (miTime == 20.2f)
+        {
+            Opening();
+        }
+        if (miTime == 20.3f)
+        {
+            Idle();
+        }
+        if (miTime == 20.9f)
+        {
+            Closing();
+        }
+        if (miTime == 21.0f)
+        {
+            Touch();
+        }
+        if (miTime == 23.5f)
+        {
+            AH();
+        }
+        if (miTime == 23.8f)
+        {
+            Touch();
+        }
+
+        //Pattern 3
+        if (miTime == 28.0f)
+        {
+            Opening();
+        }
+        if (miTime == 28.1f)
+        {
+            Idle();
+        }
+        if (miTime == 28.7f)
+        {
+            Closing();
+        }
+        if (miTime == 28.8f)
+        {
+            Touch();
+        }
+
+        //Pattern 4
+        if (miTime == 35.7f)
+        {
+            Opening();
+        }
+        if (miTime == 35.8f)
+        {
+            Idle();
+        }
+        if (miTime == 36.5f)
+        {
+            Closing();
+        }
+        if (miTime == 36.6f)
+        {
+            Touch();
+        }
+
+        //Pattern 5
+        if (miTime == 39.2f)
+        {
+            Opening();
+        }
+        if (miTime == 39.3f)
+        {
+            Idle();
+        }
+        if (miTime == 40.5f)
+        {
+            Closing();
+        }
+        if (miTime == 40.6f)
+        {
+            Touch();
+        }
     }
     void GleeNPC1::Render(HDC hdc)
     {
@@ -82,7 +180,7 @@ namespace JSH
         Sound* sound = JSHResourcemng::Find<Sound>(L"NPC1_Idle");
 
         animationmng->PlayAnimation(L"Gleeidle", true);
-        sound->Play(false);
+        sound->Play(true);
     }
     void GleeNPC1::Touch()
     {

@@ -16,7 +16,7 @@ namespace JSH
     BBPlayer::BBPlayer()
         :mState(eState::Idle)
     {
-    }
+    } 
     BBPlayer::~BBPlayer()
     {
     }
